@@ -76,12 +76,14 @@ slice
     当接收的参数是负数时，slice会将字符串的长度和对应的负数相加，结果作为参数
 */
 console.log(str.slice(4, 7));//o W
+
 /*
 substring
     两个参数：起始位置和结束位置（不包括结束位置）
     substring是以两个参数中较小一个作为起始位置，较大的参数作为结束位置substring将负参数转换为0
 */
 console.log(str.substring(7, -6));//Hello W
+
 /*
 substr
     两个参数：起始位置和所要返回的字符串长度
