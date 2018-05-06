@@ -1,4 +1,8 @@
-# basics
+# 前端知识目录
 
-JavaScript CSS HTTP HTML
+* JavaScript
+  * 基础知识
+* [HTTP](HTTP.md)
+* CSS
+* HTML
 
