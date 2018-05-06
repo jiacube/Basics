@@ -69,12 +69,14 @@ function downloadExcel(xhRequest, header, fileName){
     xhr.open(xhRequest.type, xhRequest.url);
     xhr.setRequestHeader('token', header.token);
     xhr.responseType = 'blob';
+
     xhr.onload = function(){
         if (xhr.status === 200) {
             var ele = document.createElement('a');
             document.body.appendChild(ele);
             ele.style.cssText = 'display:none';
             var blob = new Blob([this.response], {type: 'application/vnd.ms-excel'});
+            
             if(navigator.appVersion.toString().indexOf('.net') > 0) {
                 window.navigator.msSaveBlob(blob, fileName);
             } else {
