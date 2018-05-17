@@ -45,6 +45,12 @@ for (var i = 0; i < 5; i++) {
         console.log(i); //每隔1s分别输出0，1，2，3，4
     })(), 1000 * i);
 }
+
+for (let i = 0; i < 5; i++) {
+	setTimeout(function timer() {
+		console.log(i); //每隔1s分别输出0, 1, 2, 3, 4
+	}, i * 1000);
+}
 ````
 ### Promise
 ````

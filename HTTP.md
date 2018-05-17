@@ -47,3 +47,16 @@ GET、POST、PUT、DELETE、HEAD
 ### 跨域
 
 ### 浏览器输入URL到页面显示整个过程发生了什么
+*加载过程*
+* 浏览器根据DNS服务器解析得到域名的IP地址
+* 向这个IP的机器发送HTTP请求
+* 服务器收到、处理并返回HTTP请求
+* 浏览器得到返回内容
+
+*渲染过程*
+
+* 根据HTML结构生成DOM树
+* 根据CSS生成CSSOM
+* 将DOM和CSSOM整合成Render Tree
+* 根据Render Tree开始渲染和展示
+* 遇到script时，会执行并阻塞渲染
