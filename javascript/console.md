@@ -178,6 +178,10 @@ function isArrayByConstructor(unknown){
     //return unknown.__proto__.constructor === Array;
 }
 ````
+* 数组方法
+
+````
+````
 ### 函数
 * 判断是否为函数
 ````
