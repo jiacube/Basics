@@ -64,3 +64,24 @@ cookie、sessionStorage、localStorage、indexedDB
 *回流*:当Render Tree(DOM)中部分或全部元素的尺寸、结构或某些属性发生改变时，浏览器重新渲染部分或全部文档的过程。
 回流要比重绘消耗性能开支更大。
 回流必将引起重绘，重绘不一定引起回流。
+
+### 函数节流(throttle) | 函数去抖(debounce)
+* 频繁执行DOM操作、资源加载等行为，导致UI停顿甚至浏览器崩溃
+
+1.window对象的resize、scroll事件
+
+2.拖拽时的mousemove事件
+
+3.射击游戏中的mousedown、keydown事件
+
+4.文字输入、自动完成的keyup事件
+
+* debounce函数去抖
+
+调用动作n毫秒后，才会执行该动作，若在这n毫秒内又调用此动作则将重新计算执行时间。
+
+* throttle函数节流
+
+预先设定一个执行周期，当调用动作的时刻大于等于执行周期则执行该动作，然后进入下一个新周期。
+
+ 
