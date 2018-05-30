@@ -7,6 +7,7 @@
   * [Show Me Your Code](javascript/code.md)
   * [新技术](javascript/new.md)
 * [HTTP](http.md)
+* [前端性能优化](efficiency.md)
 * CSS
   * [基础知识](css/basic.md)
 * HTML
