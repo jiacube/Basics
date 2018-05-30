@@ -1,5 +1,12 @@
 ### CSS选择器
 * CSS选择器
+![CSS选择器](../images/cssSelector1.png)
+![CSS选择器](../images/cssSelector2.png)
+link visited hover active
+![CSS选择器](../images/cssSelector3.png)
+![CSS选择器](../images/cssSelector4.png)
+![CSS选择器](../images/cssSelector5.png)
+
 * CSS选择器优先级
 
 1.内联样式，如style="XXX"，权值为1000
