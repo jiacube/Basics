@@ -109,7 +109,7 @@ column-reverse：主轴为垂直方向，起点在下沿。
 
 stretch(默认值)：如果项目未设置高度或设为auto，将占满整个容器的高度。
 
-![align-items交叉轴对齐方式](../images/alignItems.png)
+![align-items交叉轴对齐方式](../images/alignItem.png)
 
 ### 内联元素 块级元素
 * 内联元素 display: inline;
@@ -213,3 +213,17 @@ div dl(定义列表) form h1 hr ol(排序表单) p table
     margin: auto;
 }
 ````
+### 伪类 伪元素
+* 伪类本质上是为了弥补常规CSS选择器的不足，以便获取到更多信息
+
+* 伪元素本质上是创建了一个有内容的虚拟容器
+
+* CSS3中伪类和伪元素的语法不同
+
+* 可以同时使用多个伪类，而只能同时使用一个伪元素
+
+CSS伪类用于向某些选择器添加特殊的效果。
+![伪类](../images/pseudoClass.png)
+
+CSS伪元素用于将特殊的效果添加到某些选择器。
+![伪元素](../images/pseudoElement.png)
