@@ -38,6 +38,14 @@ TCP是基于字节流的，将数据看做无结构的字节流进行传输，�
 
 ### 状态码
 
+200 OK   204 No Content
+
+301 Moved Permanently   302 Move temporarily   304 Not Modified
+
+400 Bad Request   401 Unauthorized   403 Forbidden   404 Not Found   405 Method Not Allowed
+
+500 Internal Server Error   502 Bad Gateway   503 Service Unavailable   504 Gateway Timeout   505 HTTP Version Not Supported
+
 ### 方法
 
 GET、POST、PUT、DELETE、HEAD
