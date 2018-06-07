@@ -1,4 +1,15 @@
+### http协议
+
+* 请求报文
+
+![请求报文](images/request.png)
+
+* 响应报文
+
+![响应报文](images/response.png)
+
 ### Cookie
+
 ### TCP/IP
 * IP(Internet Protocol)：根据网络情况，将要传输的数据，分为不同大小的包、固定的格式，在源地址和目的地址之间传递。
 * TCP(Transmission Control Protocol)：一种面向连接的、可靠的、基于字节流的传输层的传输通信协议。

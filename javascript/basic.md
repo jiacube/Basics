@@ -31,7 +31,7 @@ cookie、sessionStorage、localStorage、indexedDB
 
 **跨域处理方式**：
 * JSONP
-* CORS
+* 跨域资源共享CORS   Access-Control-Allow-Origin: *
 * Ngnix反向代理
 * Node.js中间件代理跨域
 
@@ -83,5 +83,15 @@ cookie、sessionStorage、localStorage、indexedDB
 * throttle函数节流
 
 预先设定一个执行周期，当调用动作的时刻大于等于执行周期则执行该动作，然后进入下一个新周期。
+
+### 变量提升
+````
+function a(){}
+var a;
+console.log(typeof a); //function
+````
+
+### 物理分辨率 逻辑分辨率
+物理分辨率是硬件所支持的，逻辑分辨率是软件可以达到的，互转的话乘以像素倍率。
 
  
