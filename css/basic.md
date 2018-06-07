@@ -173,12 +173,35 @@ div dl(定义列表) form h1 hr ol(排序表单) p table
     height: 50px;
     line-height: 50px;
 }
-//绝对定位元素，可结合left和margin实现，但是必须知道尺寸
-.position-element {
+### 水平垂直居中
+* 方法1: 绝对定位+transform
+
+优点：不需要提前知道尺寸
+
+缺点：兼容性不好
+
+````
+#container {
     position: relative;
-    height: 200px;
 }
-.item-position-element {
+#center {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+````
+* 方法2: 绝对定位元素+left+margin
+
+缺点：必须知道尺寸
+
+````
+#container {
+    position: relative;
+}
+#center {
     width: 80px;
     height: 40px;
     position: absolute;
@@ -187,38 +210,74 @@ div dl(定义列表) form h1 hr ol(排序表单) p table
     margin-left: -40px;
     margin-top: -20px;
 }
-/*
-    绝对定位可结合transform实现居中
-    优点：不需要提前知道尺寸
-    缺点：兼容性不好
-*/
-.transform-element {
+````
+* 方法3: 绝对定位+margin: auto
+
+优点：不需要提前知道尺寸，兼容性好
+````
+#container {
     position: relative;
-    height: 200px;
 }
-.item-transform-element {
-    width: 80px;
-    height: 40px;
+#center {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-//绝对定位结合margin: auto，不需要提前知道尺寸，兼容性好
-.margin-auto-element {
-    position: relative;
-    height: 200px;
-}
-.item-margin-auto-element {
-    width: 100px;
-    height: 50px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
     margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
+````
+* 方法4: flex
+````
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+````
+### 右边宽度固定，左边自适应
+* 方法1
+````
+<style>
+    body {
+        display: flex;
+    }
+    .left {
+        background-color: rebeccapurple;
+        height: 200px;
+        flex: 1;
+    }
+    .right {
+        background-color: red;
+        height: 200px;
+        width: 100px;
+    }
+</style>
+<body>
+    <div class="left"></div>
+    <div class="right"></div>
+</body>
+````
+* 方法2
+````
+<style>
+    div {
+        height: 200px;
+    }
+    .right {
+        float: right;
+        width: 200px;
+        backgroud-color: rebeccapurple;
+    }
+    .left {
+        margin-right: 200px;
+        background-color: red;
+    }
+</style>
+<body>
+    <div class="right"></div>
+    <div class="left"></div>
+</body>
 ````
 ### 伪类 伪元素
 * 伪类本质上是为了弥补常规CSS选择器的不足，以便获取到更多信息
