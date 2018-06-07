@@ -173,6 +173,7 @@ div dl(定义列表) form h1 hr ol(排序表单) p table
     height: 50px;
     line-height: 50px;
 }
+````
 ### 水平垂直居中
 * 方法1: 绝对定位+transform
 
