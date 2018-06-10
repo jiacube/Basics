@@ -185,6 +185,11 @@ function isFunc(unknown){
     return typeof unknown === 'function';
 }
 ````
+### 严格模式
+* 判断当前是否是严格模式
+````
+var strict = (function(){ return !this; }());
+````
 ### 平铺数组
 * 方法1
 ````

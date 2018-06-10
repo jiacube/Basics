@@ -1,3 +1,8 @@
+### this
+* 当在函数调用的时候指向window
+* 当方法调用的时候指向调用对象
+* 当用apply和call上下文调用的时候指向传入的第一个参数
+* 构造函数调用指向实例对象
 ### call、apply和bind
 改变某个函数运行时的上下文(context)，即改变函数体内部this的指向。
 
@@ -89,6 +94,34 @@ cookie、sessionStorage、localStorage、indexedDB
 function a(){}
 var a;
 console.log(typeof a); //function
+````
+
+### 闭包
+* 定义
+
+1. 闭包是指有权访问另一个函数作用域中的变量的函数。-《JavaScript高级程序设计》
+
+2. 从技术的角度讲，所有的JavaScript函数都是闭包；它们都是对象，它们都关联到作用域链。-《JavaScript权威指南》
+
+3. 当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在当前词法作用域之外执行。
+
+* Code Example
+````
+var scope = "global scope";
+function checkScope() {
+    var scope = "local scope";
+    function f() { return scope; }
+    return f();
+}
+checkScope();//local scope
+
+var scope = "global scope";
+function checkScope() {
+    var scope = "local scope";
+    function f() { return scope; }
+    return f;
+}
+checkScope()();//local scope
 ````
 
 ### 物理分辨率 逻辑分辨率

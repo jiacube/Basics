@@ -297,3 +297,21 @@ CSS伪类用于向某些选择器添加特殊的效果。
 
 CSS伪元素用于将特殊的效果添加到某些选择器。
 ![伪元素](../images/pseudoElement.png)
+
+1. :link :visited :hover :active伪类
+
+link: 用于选取未被访问的链接
+
+visited: 对指向已访问页面的链接设置样式
+
+hover: 用于设置鼠标指针浮动到链接上时的样式
+
+active: 用于设置点击链接时的样式
+
+**爱恨(LoVe/HAte)**
+
+**CSS的就近原则**：
+
+当鼠标经过未访问的链接，会同时拥有a:link、a:hover两种属性，a:link离它最近，所以它优先满足a:link，而放弃a:hover的重复定义。
+
+当鼠标经过已经访问过的链接，会同时拥有a:visited、a:hover两种属性，a:visited离它最近，所以它优先满足a:visited，而放弃a:hover的重复定义。
