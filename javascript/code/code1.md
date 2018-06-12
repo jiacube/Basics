@@ -1,6 +1,9 @@
 ### apply、call的实现
+
 参考链接：https://github.com/mqyqingfeng/Blog/issues/11
+
 * call的实现
+
 ````
 Function.prototype.myCall = function(context) {
     //考虑绑定对象为null的情况
@@ -34,7 +37,9 @@ function testFunc(name, age){
 }
 testFunc.myCall(testObj, 'yxq', 18);
 ````
+
 * apply的实现
+
 ````
 Function.prototype.myApply = function(context, arr){
     //考虑绑定对象为null的情况
@@ -61,8 +66,11 @@ Function.prototype.myApply = function(context, arr){
     return result;
 }
 ````
+
 ### 文件下载
+
 参考网站：StackOverFlow
+
 ````
 function downloadExcel(xhRequest, header, fileName){
     var xhr = new XMLHttpRequest();
@@ -95,7 +103,9 @@ function downloadExcel(xhRequest, header, fileName){
     }
 }
 ````
+
 ### 事件
+
 参考书籍：JavaScript高级程序设计(第3版)
 
 事件流存在三个阶段：事件捕获阶段、处于目标阶段、事件冒泡阶段
@@ -145,8 +155,11 @@ var EventUtil = {
     }
 };
 ````
+
 ### 实现模块化
+
 * 方法1
+
 ````
 var calculator = (function() {
     var desc = 'Hello ';
@@ -161,7 +174,9 @@ var calculator = (function() {
 })();
 calculator.sayHello('YXQ');
 ````
+
 * 方法2
+
 ````
 (function(calculator) {
     var desc = 'Hello ';
@@ -174,7 +189,9 @@ calculator.sayHello('YXQ');
 })(window.calculator || {});
 calculator.sayHello('YXQ');
 ````
+
 ### Vue双向绑定原理
+
 ````
 <div id="app">
     <input type="text" id="txt"/>

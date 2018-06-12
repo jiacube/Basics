@@ -1,4 +1,5 @@
 ### 定时器
+
 ````
 for (var i = 0; i < 5; i++) {
     console.log(i); //0 1 2 3 4
@@ -52,7 +53,9 @@ for (let i = 0; i < 5; i++) {
 	}, i * 1000);
 }
 ````
+
 ### Promise
+
 ````
 setTimeout(function(){
     console.log(1);
@@ -72,8 +75,11 @@ new Promise(function executor(resolve){
 console.log(5);
 //输出2 3个3 5 4 1
 ````
+
 ### 字符串
+
 * slice、substring和substr的区别
+
 ````
 var str = 'Hello World!'
 /*
@@ -97,14 +103,19 @@ substr
 */
 console.log(str.substr(-6, 7));//World!
 ````
+
 ### 表达式和运算符
+
 #### 赋值表达式
+
 ````
 var num1 = 4,
     num2 = 5;
 console.log((num1 = num2) == 0);//num1=num2返回5，所以结果为false
 ````
+
 #### 一元运算符
+
 ````
 var arr1 = [1, 2, 3],
     i1 = 0;
@@ -116,7 +127,9 @@ var arr2 = [1, 2, 3],
 arr2[i2++] = arr2[i2++] * 2;
 console.log(arr2, i2);//[4,2,3] 2
 ````
+
 #### eval
+
 ````
 /*
     当通过别名调用的时候，
@@ -131,8 +144,11 @@ function testEval(){
 testEval();
 console.log('outer', x);//outer 3
 ````
+
 ### 语句
+
 #### 循环
+
 ````
 [2, 3, 4, 5, 6].forEach(console.log);
 /* 输出
@@ -143,8 +159,11 @@ console.log('outer', x);//outer 3
     6 4 [2, 3, 4, 5, 6]
 */
 ````
+
 ### 对象
+
 * bind
+
 ````
 var bindFun = function(){
     console.log(this.x);
@@ -157,8 +176,11 @@ var sed = {
 };
 console.log(bindFun.bind(foo).bind(sed)());//3
 ````
+
 ### 数组
+
 * 判断是否为数组
+
 ````
 function isArray(unknown){
     return Object.prototype.toString.call(unknown) === '[object Array]';
@@ -178,30 +200,43 @@ function isArrayByConstructor(unknown){
     //return unknown.__proto__.constructor === Array;
 }
 ````
+
 ### 函数
+
 * 判断是否为函数
+
 ````
 function isFunc(unknown){
     return typeof unknown === 'function';
 }
 ````
+
 ### 严格模式
+
 * 判断当前是否是严格模式
+
 ````
 var strict = (function(){ return !this; }());
 ````
+
 ### 平铺数组
+
 * 方法1
+
 ````
 function flattenDeep(arr){
     return arr.join(',').split(',');
 }
 ````
+
 * 方法2
+
 ````
 const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFlatten(v) : v)));
 ````
+
 ### 快速排序
+
 ````
 function quickSort(arr) {
     if (arr.length <= 1) {
@@ -227,8 +262,11 @@ function quickSort(arr) {
     return quickSort(left).concat([pivot], quickSort(right));
 }
 ````
+
 ### ==运算符
+
 解析：==运算符比较喜欢Number类型
+
 ````
 //[]转换成Boolean
 [] ? true : false;
@@ -236,6 +274,13 @@ function quickSort(arr) {
 [] == true ? true : false;
 //[]转换成Number，即NaN
 {} == true ? true : false;
+````
+
+### map
+
+````
+//parseInt把传过来的索引值当成进制数来使用，从而返回了NaN
+['1', '2', '3'].map(parseInt) //[1, NaN, NaN]
 ````
 
 
