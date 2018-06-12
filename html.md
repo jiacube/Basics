@@ -56,8 +56,16 @@ function testWebSocket() {
 * 目标target
 ![target](images/target.png)
 
-### defer属性
-defer属性规定是否对脚本执行延迟，直到页面加载为止。
+### defer | async
+script标签用于加载和执行脚本。
 
-* 只有Internet Explorer支持defer属性。
+async和defer使script都不会阻塞DOM的渲染。
+
+**defer**属性规定是否对脚本执行延迟，直到页面加载为止。
+
+只有Internet Explorer支持defer属性。
+
+**async**属性规定一旦脚本可用，则会异步执行。
+
+async的执行，并不会按照script在页面中的顺序来执行，而是谁先加载完谁先执行。
 

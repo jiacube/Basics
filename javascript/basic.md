@@ -29,6 +29,14 @@ cookie、sessionStorage、localStorage、indexedDB
 * 数据有效期不同
 * 作用域不同
 
+#### Session和Cookie的区别
+
+session是服务器端保存的一个数据结构，用来跟踪用户的状态，这个数据可以保存在集群、数据库和文件中。
+
+Cookie是客户端保存用户信息的一种机制，用来记录用户的一些信息。
+
+session的运行依赖于session ID, session ID是存在于Cookie中。
+
 ### 跨域
 同源策略是浏览器的一个安全功能，不同源的客户端脚本在没有明确授权的情况下，不能读写对方资源。
 

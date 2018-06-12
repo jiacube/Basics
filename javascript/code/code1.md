@@ -97,6 +97,9 @@ function downloadExcel(xhRequest, header, fileName){
 ````
 ### 事件
 参考书籍：JavaScript高级程序设计(第3版)
+
+事件流存在三个阶段：事件捕获阶段、处于目标阶段、事件冒泡阶段
+
 ````
 var EventUtil = {
     addHandler: function(element, type, handler) {

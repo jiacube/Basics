@@ -27,7 +27,7 @@
 
 * 减少DNS查询
 
-* 压缩JavaScript和CSS
+* 压缩JavaScript、CSS、字体和图片等
 
 * 避免重定向
 
@@ -42,3 +42,18 @@
 * 使Ajax缓存
 
 Ajax是实时响应，通过使用Ajax更好地提高效果。
+
+* 图片懒加载
+
+* 减少DOM元素数量
+
+* 减少DOM操作
+
+* 使用CSS Sprite
+
+* 避免图片src为空
+
+* 尽量减少iframe使用
+
+* 多域名分发划分内容到不同域名
+
