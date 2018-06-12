@@ -227,6 +227,16 @@ function quickSort(arr) {
     return quickSort(left).concat([pivot], quickSort(right));
 }
 ````
+### ==运算符
+解析：==运算符比较喜欢Number类型
+````
+//[]转换成Boolean
+[] ? true : false;
+//[]转换成Number，即0
+[] == true ? true : false;
+//[]转换成Number，即NaN
+{} == true ? true : false;
+````
 
 
   

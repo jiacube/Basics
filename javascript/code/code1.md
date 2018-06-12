@@ -142,5 +142,56 @@ var EventUtil = {
     }
 };
 ````
+### 实现模块化
+* 方法1
+````
+var calculator = (function() {
+    var desc = 'Hello ';
+
+    function sayHello(name) {
+        console.log(desc + name);
+    }
+
+    return {
+        sayHello: sayHello
+    }
+})();
+calculator.sayHello('YXQ');
+````
+* 方法2
+````
+(function(calculator) {
+    var desc = 'Hello ';
+
+    calculator.sayHello = function(name) {
+        console.log(desc + name);
+    }
+
+    window.calculator = calculator;
+})(window.calculator || {});
+calculator.sayHello('YXQ');
+````
+### Vue双向绑定原理
+````
+<div id="app">
+    <input type="text" id="txt"/>
+    <p id="show-txt"></p>
+</div>
+````
+````
+var obj = {};
+Object.defineProperty(obj, 'txt', {
+    get: function() {
+        return obj;
+    },
+    set: function(newValue) {
+        document.getElementById('txt').value = newValue;
+        document.getElementById('show-txt').innerHTML = newValue;
+    }
+});
+document.addEventListener('keyup', function(e){
+    obj.txt = e.target.value;
+});
+````
 
 
