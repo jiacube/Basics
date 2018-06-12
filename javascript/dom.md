@@ -20,13 +20,16 @@
 
     top parent self
 
-    窗口位置
+窗口位置
+
 ````
 //screenX->Firefox
 var leftPos = (typeof window.screenLeft == 'number') ? window.screenLeft : window.screenX,
 topPos = (typeof window.screenTop == 'number') ? window.screenTop : window.screenY;
 ````
+
 窗口大小
+
 ````
 var pageWidth = window.innerWidth,
     pageHeight = window.innerHeight;
@@ -41,11 +44,14 @@ if (typeof pageWidth != 'number') {
     }
 }
 ````
+
 打开窗口
+
 ````
 var win = window.open('https://baidu.com', 'yxqWin', 'height=400,width=400,top=10,left=10,resizable=yes');
 win.opener = null;
 ````
+
 * location
 
 网址：location.href
@@ -61,12 +67,15 @@ hash：location.hash
 * navigator
 
 获取浏览器特 navigator.userAgent
+
 * screen
 
 屏幕的宽度：screen.width
 
 屏幕的高度：screen.height
+
 * history
+
 ````
 //后退一页
 history.back();
@@ -75,7 +84,9 @@ history.forward();
 //前进两页
 history.go(2);
 ````
+
 ### 事件
+
 事件流描述的是从页面中接收事件的顺序。
 
 *事件冒泡(event bubbling)*[IE]：事件开始时由最具体的元素(文档中嵌套层次最深的那个节点)接收，然后逐级向上传播到较为不具体的节点(文档)。
