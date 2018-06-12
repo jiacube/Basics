@@ -78,6 +78,12 @@ session的运行依赖于session ID, session ID是存在于Cookie中。
 
 ### 声明提升(变量|函数)
 
+````
+function a(){}
+var a;
+console.log(typeof a); //function
+````
+
 ### 闭包
 
 ### 原型及原型链
@@ -119,25 +125,18 @@ session的运行依赖于session ID, session ID是存在于Cookie中。
 
 预先设定一个执行周期，当调用动作的时刻大于等于执行周期则执行该动作，然后进入下一个新周期。
 
-### 变量提升
-
-````
-function a(){}
-var a;
-console.log(typeof a); //function
-````
-
 ### 闭包
 
 * 定义
 
-1. 闭包是指有权访问另一个函数作用域中的变量的函数。-《JavaScript高级程序设计》
+闭包是指有权访问另一个函数作用域中的变量的函数。-《JavaScript高级程序设计》
 
-2. 从技术的角度讲，所有的JavaScript函数都是闭包；它们都是对象，它们都关联到作用域链。-《JavaScript权威指南》
+从技术的角度讲，所有的JavaScript函数都是闭包；它们都是对象，它们都关联到作用域链。-《JavaScript权威指南》
 
-3. 当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在当前词法作用域之外执行。
+当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在当前词法作用域之外执行。
 
 * Code Example
+
 ````
 var scope = "global scope";
 function checkScope() {
