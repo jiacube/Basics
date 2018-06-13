@@ -47,9 +47,28 @@ if (typeof pageWidth != 'number') {
 
 打开窗口
 
+* Ex1
+
 ````
 var win = window.open('https://baidu.com', 'yxqWin', 'height=400,width=400,top=10,left=10,resizable=yes');
 win.opener = null;
+````
+
+* Ex2
+
+````
+function clickMe() {
+    //本页面打开
+    //location.assign('https://www.baidu.com');
+    //新打开窗口
+    open('https://www.baidu.com');
+}
+
+<button onclick="clickMe();">Click Me</button>
+<!-- 新打开窗口 -->
+<form action="https://www.baidu.com" target="_blank">
+    <input type="submit" value="submit"/>
+</form>
 ````
 
 * location

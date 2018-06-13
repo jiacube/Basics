@@ -11,5 +11,5 @@
 * [HTML](html.md)
 * Show Me Your Code
   * [JavaScript Code](javascript/code/code1.md)
-  * [JavaScript console](javascript/code/code2.md)
+  * [JavaScript Console](javascript/code/code2.md)
   * [CSS](css/code.md)

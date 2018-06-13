@@ -116,6 +116,8 @@ console.log((num1 = num2) == 0);//num1=num2返回5，所以结果为false
 
 #### 一元运算符
 
+* 方法1
+
 ````
 var arr1 = [1, 2, 3],
     i1 = 0;
@@ -126,6 +128,39 @@ var arr2 = [1, 2, 3],
     i2 = 0;
 arr2[i2++] = arr2[i2++] * 2;
 console.log(arr2, i2);//[4,2,3] 2
+````
+
+* 方法2
+
+````
+var a = 1, b = 3;
+console.log(a+++b);//4
+````
+
+#### 逗号运算符
+
+````
+var a = (function(){
+    console.log('a');
+    return 'a';
+}, function(){
+    console.log(1);
+    return 1;
+})();
+console.log(typeof a); //number
+````
+
+#### ==运算符
+
+解析：==运算符比较喜欢Number类型
+
+````
+//[]转换成Boolean
+[] ? true : false;
+//[]转换成Number，即0
+[] == true ? true : false;
+//[]转换成Number，即NaN
+{} == true ? true : false;
 ````
 
 #### eval
@@ -263,19 +298,6 @@ function quickSort(arr) {
 }
 ````
 
-### ==运算符
-
-解析：==运算符比较喜欢Number类型
-
-````
-//[]转换成Boolean
-[] ? true : false;
-//[]转换成Number，即0
-[] == true ? true : false;
-//[]转换成Number，即NaN
-{} == true ? true : false;
-````
-
 ### map
 
 ````
@@ -283,5 +305,43 @@ function quickSort(arr) {
 ['1', '2', '3'].map(parseInt) //[1, NaN, NaN]
 ````
 
+### this
+
+````
+const obj1 = {
+    name: 'obj1',
+    showName: function() {
+        console.log(name);
+    }
+};
+obj1.showName();
+
+const obj2 = {
+    name: 'obj2',
+    showName: function() {
+        console.log(this.name);
+    }
+};
+obj2.showName();//obj2
+
+const obj3 = {
+    name: 'obj3',
+    showName: function(name) {
+        console.log(name);
+    }
+};
+obj3.showName(this.name);
+obj3.showName(name);
+
+const obj4 = {
+    name: 'obj4',
+    showName: console.log(this.name)
+};
+
+const obj5 = {
+    name: 'obj5',
+    showName: console.log(name)
+};
+````
 
   
