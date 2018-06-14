@@ -91,8 +91,11 @@ console.log(typeof a); //function
 * 原型
 
 所有的引用类型(数组、对象、函数)，都具有对象特性，即可自由扩展属性(null除外)。
+
 所有的引用类型(数组、对象、函数)，都有一个__proto__属性，属性值是一个普通的对象。
+
 所有的函数，都有一个prototype属性，属性值是一个普通的对象。
+
 所有的引用类型(数组、对象、函数)，__proto__属性值指向它的构造函数的prototype属性值。
 
 * 原型链
@@ -100,22 +103,26 @@ console.log(typeof a); //function
 链式结构
 
 ### 重绘和回流
+
 *重绘*：当页面中元素样式的改变并不影响它在文档流中的位置时(EX:color|visibility)，浏览器会将新样式赋予给元素并重新绘制它。
+
 *回流*:当Render Tree(DOM)中部分或全部元素的尺寸、结构或某些属性发生改变时，浏览器重新渲染部分或全部文档的过程。
+
 回流要比重绘消耗性能开支更大。
+
 回流必将引起重绘，重绘不一定引起回流。
 
 ### 函数节流(throttle) | 函数去抖(debounce)
 
 * 频繁执行DOM操作、资源加载等行为，导致UI停顿甚至浏览器崩溃
 
-1.window对象的resize、scroll事件
+window对象的resize、scroll事件
 
-2.拖拽时的mousemove事件
+拖拽时的mousemove事件
 
-3.射击游戏中的mousedown、keydown事件
+射击游戏中的mousedown、keydown事件
 
-4.文字输入、自动完成的keyup事件
+文字输入、自动完成的keyup事件
 
 * debounce函数去抖
 
