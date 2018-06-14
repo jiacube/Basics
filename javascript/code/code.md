@@ -192,6 +192,10 @@ calculator.sayHello('YXQ');
 
 ### Vue双向绑定原理
 
+* 方法1
+
+通过Object对象的defineProperty属性，重写data的set和get函数来实现
+
 ````
 <div id="app">
     <input type="text" id="txt"/>
@@ -212,6 +216,134 @@ Object.defineProperty(obj, 'txt', {
 document.addEventListener('keyup', function(e){
     obj.txt = e.target.value;
 });
+````
+
+* 方法2
+
+参考链接：https://juejin.im/post/5acc17cb51882555745a03f8
+
+![Vue的双向数据绑定](../../images/vue.png)
+
+````
+<div id="app">
+    <form>
+        <input type="text" v-model="count"/>
+        <button type="button" v-click="add">添加</button>
+    </form>
+    <p v-bind="count"></p>
+</div>
+
+<script>
+function myVue(options) {
+    this._init(options);
+}
+
+myVue.prototype._init = function(options) {
+    this.$options = options;
+    this.$el = document.querySelector(options.el);
+    this.$data = options.data;
+    this.$methods = options.methods;
+
+    this._binding = {};
+    this.obverse(this.$data);
+    this._compile(this.$el);
+}
+
+myVue.prototype._obverse = function(obj) {
+    var _this = this;
+    Object.keys(obj).forEach(function(key){
+        if (obj.hasOwnProperty(key)) {
+            _this._binding[key] = {
+                _directives: []
+            };
+            var value = obj[key];
+            if (typeof value === 'object') {
+                _this._observe(value);
+            }
+            var binding = _this._binding[key];
+            Object.defineProperty(_this.$data, key, {
+                enumerable: true,
+                configurable: true,
+                get: function() {
+                    console.log(`${key}获取${value}`);
+                    return value;
+                },
+                set: function(newVal) {
+                    console.log(`${key}更新${newVal}`);
+                    if (value !== newVal) {
+                        value = newVal;
+                        binding._directives.forEach(function(item){
+                            item.update();
+                        });
+                    }
+                }
+            });
+        }
+    });
+}
+
+myVue.prototype._compile = function(root) {
+    var _this = this,
+        nodes = root.children;
+    for (var i = 0; i < nodes.length; i++) {
+        var node = nodes[i];
+        if (node.children.length) {
+            this._compile(node);
+        }
+
+        if (node.hasAttribute('v-click')) {
+            node.onclick = (function(){
+                var attrVal = nodes[i].getAttribute('v-click');
+                return _this.$methods[attrVal].bind(_this.$data);
+            })();
+        }
+
+        if (node.hasAttribute('v-model') && (node.tagName == 'INPUT' || node.tagName == 'TEXTAREA')) {
+            node.addEventListner('input', (function(key) {
+                var attrVal = node.getAttribute('v-model');
+                _this._binding[attrVal]._directives.push(new Watcher('input', node, _this, attrVal, 'value'));
+
+                return function() {
+                    _this.$data[attrVal] = nodes[key].value;
+                }
+            })(i));
+        }
+
+        if (node.hasAttribute('v-bind')) {
+            var attrVal = node.getAttribute('v-bind');
+            _this._binding[attrVal]._directives.push(new Watcher('text', node, _this, attrVal, 'innerHTML'));
+        }
+    }
+}
+
+function Watcher(name, el, vm, exp, attr) {
+    this.name = name;
+    this.el = el;
+    this.vm = vm;
+    this.exp =exp;
+    this.attr = attr;
+
+    this.update();
+}
+
+Watcher.prototype.update = function () {
+    this.el[this.attr] = this.vm.$data[this.exp];
+}
+
+window.onload = function() {
+    var app = new myVue({
+        el: '#app',
+        data: {
+            count: 0
+        },
+        methods: {
+            add: function() {
+                this.count ++;
+            }
+        }
+    });
+}
+</script>
 ````
 
 

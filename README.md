@@ -10,6 +10,7 @@
   * [基础知识](css/basic.md)
 * [HTML](html.md)
 * Show Me Your Code
-  * [JavaScript Code](javascript/code/code1.md)
-  * [JavaScript Console](javascript/code/code2.md)
+  * [JavaScript 功能实现](javascript/code/code.md)
+  * [JavaScript 输出](javascript/code/console.md)
+  * [JavaScript 数组](javascript/code/array.md)
   * [CSS](css/code.md)

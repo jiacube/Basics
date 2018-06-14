@@ -1,10 +1,17 @@
 ### CSS选择器
+
 * CSS选择器
+
 ![CSS选择器](../images/cssSelector1.png)
+
 ![CSS选择器](../images/cssSelector2.png)
+
 link visited hover active
+
 ![CSS选择器](../images/cssSelector3.png)
+
 ![CSS选择器](../images/cssSelector4.png)
+
 ![CSS选择器](../images/cssSelector5.png)
 
 * CSS选择器优先级
@@ -20,7 +27,9 @@ link visited hover active
 5.通用选择器(*)、子选择器(>)和相邻同胞选择器(+)权值为0
 
 ### CSS模型
+
 ![盒子模型](../images/box.png)
+
 ````
 //标准模型
 box-sizing: content-box;
@@ -47,6 +56,7 @@ box-sizing: border-box;
 * 计算BFC高度的时候，浮动元素也会参与计算
 
 #### 创建BFC
+
 * 根元素
 
 * float属性不为none(脱离文档流)
@@ -58,6 +68,7 @@ box-sizing: border-box;
 * overflow不为visible
 
 #### 应用场景
+
 * 自适应两栏布局
 
 * 消除内部浮动
@@ -65,6 +76,7 @@ box-sizing: border-box;
 * 防止垂直margin重叠
 
 ### float
+
 破坏性 包裹性 清空格
 
 ````
@@ -80,6 +92,7 @@ box-sizing: border-box;
 ````
 
 ### position
+
 * relative
 
 relative会导致自身位置的相对变化，而不会影响其他元素的位置、大小。
@@ -181,6 +194,7 @@ Grid布局由两个核心组成部分wrapper(父元素)和items(子元素)。wra
 ````
 
 ### 内联元素 块级元素
+
 * 内联元素 display: inline;
 
 a br img input span textarea
@@ -233,3 +247,15 @@ active: 用于设置点击链接时的样式
 当鼠标经过未访问的链接，会同时拥有a:link、a:hover两种属性，a:link离它最近，所以它优先满足a:link，而放弃a:hover的重复定义。
 
 当鼠标经过已经访问过的链接，会同时拥有a:visited、a:hover两种属性，a:visited离它最近，所以它优先满足a:visited，而放弃a:hover的重复定义。
+
+### margin: 0 auto;元素无法水平居中的原因
+
+* 该元素需要设置一个宽度
+
+* 该元素不能浮动或绝对定位
+
+* <!DOCTYPE>类型相关定义
+
+* center元素
+
+* 父级元素text-align

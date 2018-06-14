@@ -212,30 +212,6 @@ var sed = {
 console.log(bindFun.bind(foo).bind(sed)());//3
 ````
 
-### 数组
-
-* 判断是否为数组
-
-````
-function isArray(unknown){
-    return Object.prototype.toString.call(unknown) === '[object Array]';
-}
-
-function isArrayByType(unknown){
-    return typeof unknown;
-}
-
-//用instanceof和constructor判断的变量，必须在当前页面声明
-function isArrayByInstance(unknown){
-    return unknown instanceof Array;
-}
-
-function isArrayByConstructor(unknown){
-    return unknown.constructor === Array;
-    //return unknown.__proto__.constructor === Array;
-}
-````
-
 ### 函数
 
 * 判断是否为函数
@@ -252,22 +228,6 @@ function isFunc(unknown){
 
 ````
 var strict = (function(){ return !this; }());
-````
-
-### 平铺数组
-
-* 方法1
-
-````
-function flattenDeep(arr){
-    return arr.join(',').split(',');
-}
-````
-
-* 方法2
-
-````
-const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFlatten(v) : v)));
 ````
 
 ### 快速排序
