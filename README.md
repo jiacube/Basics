@@ -4,7 +4,7 @@
   * [基础知识](javascript/basic.md)
   * [BOM](javascript/dom.md)
   * [新技术](javascript/new.md)
-* [HTTP](http.md)
+* [HTTP](HTTP.md)
 * [前端性能优化](efficiency.md)
 * CSS
   * [基础知识](css/basic.md)
