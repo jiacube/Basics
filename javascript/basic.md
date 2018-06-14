@@ -84,8 +84,6 @@ var a;
 console.log(typeof a); //function
 ````
 
-### 闭包
-
 ### 原型及原型链
 
 * 原型
