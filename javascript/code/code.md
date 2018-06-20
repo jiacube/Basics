@@ -346,4 +346,19 @@ window.onload = function() {
 </script>
 ````
 
+### 深拷贝的实现
+
+1. 
+
+parse方法将JSON字符串反序列化成JS对象
+
+stringify方法将JS对象序列化成JSON字符串
+
+缺点：
+
+* 无法实现对函数、RegExp等特殊对象的克隆
+
+* 会抛弃对象的constructor，所有的构造函数都会指向Object
+
+* 对象循环引用，会报错
 

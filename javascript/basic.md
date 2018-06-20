@@ -34,9 +34,23 @@ cookie、sessionStorage、localStorage、indexedDB
 
 * 传递方式不同
 
-* 数据大小不同
+cookie会在浏览器和服务器间来回传递
+
+sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存
+
+* 存储数据大小不同
+
+cookie数据大小不能超过4k
+
+sessionStorage虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大
 
 * 数据有效期不同
+
+localStorage存储持久数据，浏览器关闭后数据不丢失除非主动删除数据
+
+sessionStorage数据在当前浏览器窗口关闭后自动删除
+
+cookie设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭
 
 * 作用域不同
 
@@ -86,6 +100,30 @@ console.log(typeof a); //function
 
 ### 原型及原型链
 
+* 构造函数
+
+构造函数的执行过程
+
+1. 当以new关键字调用时，会创建一个新的内存空间，标记为Animal的实例
+
+2. 函数体内部的this指向该内存
+
+3. 执行函数体内的代码：给this添加属性，即给实例添加属性
+
+4. 默认返回this[新创建的内存空间]
+
+* 原型对象
+
+当一个函数创建好之后，都会有一个prototype属性，这个属性值是一个对象，我们把这个prototype属性所指向的内存空间称为这个函数的原型对象。
+
+只要在这个原型对象上添加属性和方法，这些属性和方法都可以被改函数的实例所访问。
+
+某个函数的原型对象会有一个constructor属性，这个属性指向该函数本身。
+
+当某个函数当成构造函数来调用时，就会产生一个构造函数的实例。这个实例拥有一个__proto__属性，这个属性指向该实例的构造函数的原型对象。
+
+![原型](../images/prototype.png)
+
 * 原型
 
 所有的引用类型(数组、对象、函数)，都具有对象特性，即可自由扩展属性(null除外)。
@@ -100,15 +138,15 @@ console.log(typeof a); //function
 
 链式结构
 
-### 重绘和回流
+* 判断条件
 
-*重绘*：当页面中元素样式的改变并不影响它在文档流中的位置时(EX:color|visibility)，浏览器会将新样式赋予给元素并重新绘制它。
+object instanceof constructor运算符用来测试一个对象在其原型链是否存在一个构造函数。
 
-*回流*:当Render Tree(DOM)中部分或全部元素的尺寸、结构或某些属性发生改变时，浏览器重新渲染部分或全部文档的过程。
+object instanceof constructor判断的是constructor.prototype是否存在于object的原型链中。
 
-回流要比重绘消耗性能开支更大。
+prototypeObj.isPrototypeOf(object)方法用于测试一个对象是否存在于另一个对象的原型链上。
 
-回流必将引起重绘，重绘不一定引起回流。
+prototypeObj.isPrototypeOf(object)判断的是prototypeObj对象是否存在于object对象的原型链之中。
 
 ### 函数节流(throttle) | 函数去抖(debounce)
 
@@ -187,3 +225,50 @@ html5 websoket | WebSocket通过Flash | XHR长时间连接 | XHR Multipart Strea
 不支持事件绑定
 
 最合适网页游戏
+
+### JavaScript异步编程
+
+回调函数   事件监听   发布/订阅   Promise对象
+
+* Promise
+
+* Generator
+
+````
+function* sayHelloWorld() {
+    yield 'Hello';
+    yield 'World';
+    return 'End';
+}
+````
+
+* Async
+
+````
+function timeout(ms) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+    });
+}
+
+async function asyncPrint(value, ms) {
+    await timeout(ms);
+    console.log(value);
+}
+
+asyncPrint('Hello World!', 50);
+````
+
+### Ajax
+
+* readystate
+
+0: (未初始化)未调用open方法
+
+1: (载入)已调用send方法，正在发送请求
+
+2: (载入完成)send完成
+
+3: (解析)正在解析响应内容
+
+4: (完成)响应内容解析完成

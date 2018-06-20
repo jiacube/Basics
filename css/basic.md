@@ -93,6 +93,8 @@ box-sizing: border-box;
 
 ### position
 
+* static | inherit
+
 * relative
 
 relative会导致自身位置的相对变化，而不会影响其他元素的位置、大小。
@@ -107,32 +109,92 @@ relative会导致自身位置的相对变化，而不会影响其他元素的位
 
 4.absolute元素会悬浮在页面上方，会遮挡住下方的页面内容。
 
+* sticky
+
+在屏幕范围(viewport)时该元素的位置并不受到定位影响(设置是top、left属性无效)，当该元素的位置将要移除偏移范围时，定位又会变成fixed，根据设置的left、top等属性成固定位置的效果。
+
+1. sticky出现的原因：监听scroll事件来实现粘性布局使浏览器进入慢滚动的模式，这与浏览器想要通过硬件加速来提升滚动的体验是相驳的。
+
+2. position:sticky的表现上像是position: fixed和position: relative的结合体，特征如下：
+
+元素不会脱离文档流，并保留元素在文档流中占位的大小
+
+元素在容器中被滚动超过指定的偏移值时，元素在容器内固定在指定位置
+
+元素固定的相对偏移时相对于离它最近的具有滚动框的祖先元素(BFC|最近的块级祖先元素)，如果祖先元素都不可以滚动，那么是相对于viewport来计算元素的偏移量。
+
+3. 生效条件
+
+父元素不能overflow: hidden或者overflow: auto属性
+
+必须指定top、bottom、left、right4个值之一，否则只会处于相对定位
+
+父元素的高度不能低于sticky元素的高度
+
+sticky元素仅在其父元素内生效
+
 * 定位上下文
 
 1.relative元素的定位永远时相对于**元素自身**设置的，~~和其他元素没关系，也不会影响其他元素~~。
 
-2.fixed元素的定位是相对于**window(或iframe)边界**的，和其他元素没有关系。但是它具有**破坏性**，~~会导致其他元素位置的变化~~。
+2.fixed元素的定位是相对于**window(或iframe)边界**的，和其他元素没有关系，脱离文档流。但是它具有**破坏性**，~~会导致其他元素位置的变化~~。
 
 3.absoulte会递归查找该元素的所有**父元素**，如果找到一个设置了**position:relative/absolute/fixed**的元素，就以该元素为基准定位，如果没找到，就以**浏览器边界**定位。
 
+Code Ex:
+
+````
+<body style="margin: 0;padding: 0;">
+    <div id="box" style="top:10px;margin: 20px 10px;"></div>
+</body>
+````
+
+给#box设置position:static,则上边距为20px
+
+给#box设置position:relative,则上边距为30px
+
+给#box设置position:absolute,则上边距为30px
+
+给#box设置position:sticky,则滚动起来上边距为10px，不滚动则为20px
+
+
 ### Flex(弹性)布局 一维
+
+参考链接:http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
 
 ![Flex布局](../images/flex.png)
 
 #### 容器的属性
 
 * flex-direction设置主轴的方向
-row(默认值)：主轴为水平方向，起点在左端。
 
-row-reverse：主轴为水平方向，起点在右边。
+````
+.box {
+    flex-direction: row | row-reverse | column | column-reverse;
+}
+````
 
-column：主轴为垂直方向，起点在上沿。
+row(默认值): 主轴为水平方向，起点在左端。
 
-column-reverse：主轴为垂直方向，起点在下沿。
+row-reverse: 主轴为水平方向，起点在右边。
+
+column: 主轴为垂直方向，起点在上沿。
+
+column-reverse: 主轴为垂直方向，起点在下沿。
 
 * flex-wrap属性定义如果一条轴线排不下，如何换行。
 
-flex-wrap: nowrap | wrap | wrap-reverse
+````
+.box {
+    flex-wrap: nowrap | wrap | wrap-reverse;
+}
+````
+
+nowrap(默认): 不换行
+
+wrap: 换行，第一行在上方
+
+wrap-reverse: 换行，第一行在下方
 
 * flex-row属性时flex-direction属性和flex-wrap属性的简写形式。
 
@@ -140,15 +202,45 @@ flex-wrap: nowrap | wrap | wrap-reverse
 
 ![justify-content主轴对齐方式](../images/justifyContent.png)
 
-* align-items属性定义项目在交叉轴上如何对齐
+flex-start(默认值): 左对齐
 
-stretch(默认值)：如果项目未设置高度或设为auto，将占满整个容器的高度。
+flex-end: 右对齐
+
+center: 居中
+
+space-between: 两端对齐，项目之间的间隔都相等
+
+space-around: 每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+
+* align-items属性定义项目在交叉轴上如何对齐
 
 ![align-items交叉轴对齐方式](../images/alignItem.png)
 
+flex-start: 交叉轴的起点对齐
+
+flex-end: 交叉轴的终点对齐
+
+center: 交叉轴的中点对齐
+
+baseline: 项目的第一行文字的基线对齐
+
+stretch(默认值)：如果项目未设置高度或设为auto，将占满整个容器的高度。
+
 * align-content属性定义了多根轴线的对齐方式。
 
-align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+![align-content](../images/align-content.png)
+
+flex-start: 与交叉轴的起点对齐
+
+flex-end: 与交叉轴的终点对齐
+
+center: 与交叉轴的中点对齐
+
+space-between: 与交叉轴两端对齐，轴线之间的间隔平均分布。
+
+space-around: 每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
+
+stretch(默认值): 轴线占满整个交叉轴
 
 #### 项目的属性
 
@@ -165,6 +257,25 @@ align-content: flex-start | flex-end | center | space-between | space-around | s
 * align-self属性允许单个项目有与其他项目不一样的对齐方式
 
 align-self: auto | flex-start | flex-end | center | baseline | stretch
+
+设为flex布局之后，子元素的float、clear和vertical-align属性将失效。
+
+#### Flex浏览器兼容性
+
+````
+.flex-container {
+    /* 老版本语法: Safari3.1-6, Android browser, older webkit browser */
+    display: -webkit-box;
+    /* 老版本语法: Firefox19- (buggy but mostly works) */
+    display: -moz-box;
+    /* 混合版本 IE10 */
+    display: -ms-flexbox;
+    /* 新版本语法: Chrome 21+ */
+    display: -webkit-flex;
+    /* 新版本语法 */
+    display: flex;
+}
+````
 
 ### Grid(网格)布局 二维
 
@@ -259,3 +370,32 @@ active: 用于设置点击链接时的样式
 * center元素
 
 * 父级元素text-align
+
+### 渐进增强和优雅降级
+
+渐进增强(Progressive Enhancement)：一开始就针对低版本浏览器进行构建页面，完成基本的功能，然后再针对高级浏览器进行效果、交互、追加功能达到更好的体验。
+
+优雅降级(Graceful Degradation)：一开始就构建站点的完整功能，然后针对浏览器测试和修复。
+
+### 浏览器兼容方式
+
+CSS Hack
+
+    属性级Hack
+
+    选择符级Hack
+
+    IE条件注释Hack
+
+JS能力检测
+
+### 响应式布局
+
+* 声明viewport原标签
+
+* 使用流式布局
+
+* 所有容器都使用相对尺寸，不使用绝对尺寸
+
+* CSS媒介查询
+

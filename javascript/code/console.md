@@ -56,6 +56,8 @@ for (let i = 0; i < 5; i++) {
 
 ### Promise
 
+* EX1
+
 ````
 setTimeout(function(){
     console.log(1);
@@ -74,6 +76,20 @@ new Promise(function executor(resolve){
 
 console.log(5);
 //输出2 3个3 5 4 1
+````
+
+* EX2
+
+````
+new Promise(resolve => {
+    console.log(1);
+    resolve(3);
+    Promise.resolve().then(() => console.log(4));
+}).then(num => {
+    console.log(num);
+});
+console.log(2);
+//1 2 4 3
 ````
 
 ### 字符串

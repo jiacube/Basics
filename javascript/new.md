@@ -21,3 +21,43 @@ window.requestAnimationFrame()方法希望执行动画并请求浏览器在下�
 * 解决毫秒的不精确性
 
 * 避免过度渲染
+
+### Webpack和Grunt的区别
+
+Grunt构建工具更关注于过程，明确先做什么，再做什么。
+
+Webpack模块化工具，更关注模块划分以及模块之间的依赖关系。
+
+Webpack是一种模块化的解决方案，但由于其加载器(loaders)的存在，使webpack可以在打包之前，对原始文件做预处理。Webpack的处理过程：给定一个入口文件，从该文件开始找到项目的所有依赖，并用loaders处理这些文件，最后打包成可执行的JavaScript文件。
+
+### 模块规范
+
+#### CommonJS node.js
+
+CommonJS加载模块是同步的，所以只有加载完成才能执行后面的操作。
+
+#### ES6模块规范
+
+ES6在编译时就能确定模块的依赖关系；CommonJS只能在运行时确定模块的依赖关系。
+
+#### 浏览器段模块规范
+
+AMD(异步模块定义)推崇依赖前置，在定义模块的时候就要声明其依赖的模块。
+
+    提前执行 依赖前置 RequireJS
+
+    AMD的一个AMD可以多用
+
+CMD(通用模块定义)推崇就近依赖，只有在用到某个模块的时候再去require
+
+    延迟执行 依赖就近 SeaJS
+
+    CMD的API职责单一，没有全局require
+
+AMD和CMD最大的区别是对依赖模块的执行时机处理不同
+
+#### 跨平台的解决方案
+
+UMD Common.js和AMD的熔合
+
+UMD先判断是否支持Node.js的模块(exports)是否存在，存在则使用Node.js模块模式；判断是否支持AMD(define是否存在)，存在则使用AMD方式加载模块。
