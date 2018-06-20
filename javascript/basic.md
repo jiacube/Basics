@@ -148,6 +148,12 @@ prototypeObj.isPrototypeOf(object)方法用于测试一个对象是否存在于�
 
 prototypeObj.isPrototypeOf(object)判断的是prototypeObj对象是否存在于object对象的原型链之中。
 
+* 继承
+
+ES5继承：子类先创建属于自己的this，然后再将父类的方法添加到this(也就是使用Parent.apply(this)的方式)或者this.__proto__(即Child.prototype=new Parent())
+
+ES6继承：创建父类的实例对象this，然后再用子类的构造函数修改this
+
 ### 函数节流(throttle) | 函数去抖(debounce)
 
 * 频繁执行DOM操作、资源加载等行为，导致UI停顿甚至浏览器崩溃
