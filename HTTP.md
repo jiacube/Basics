@@ -8,9 +8,33 @@
 
 ![响应报文](images/response.png)
 
+* HTTP1.1首部字段一览
+
+通用首部字段
+
+![通用首部字段](images/header1.png)
+
+请求首部字段
+
+![请求首部字段](images/header2.png)
+
+响应首部字段
+
+![响应首部字段](images/header3.png)
+
+实体首部字段
+
+![实体首部字段](images/header4.png)
+
 ### HTTP1.X和HTTP2.0的区别
 
-* HTTP2.0支持header数据的压缩
+* 多路复用
+
+做到同一个连接并发处理多个请求，并且并发请求的数量比HTTP1.1大了好几个数量级。
+
+* header的数据压缩
+
+* 服务器推送
 
 ### TCP/IP
 
