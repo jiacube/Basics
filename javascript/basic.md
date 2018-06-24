@@ -1,5 +1,7 @@
 ### this
 
+**this是调用函数的那个对象**
+
 * 当在函数调用的时候指向window
 
 * 当方法调用的时候指向调用对象
@@ -70,13 +72,15 @@ session的运行依赖于session ID, session ID是存在于Cookie中。
 
 **跨域处理方式**：
 
-* JSONP
-
-* 跨域资源共享CORS   Access-Control-Allow-Origin: *
-
 * Ngnix反向代理
 
 * Node.js中间件代理跨域
+
+* 跨域资源共享CORS   Access-Control-Allow-Origin: *
+
+* JSONP get
+
+* domain.name 子域
 
 ### 事件循环(Event Loop)
 
@@ -182,7 +186,7 @@ window对象的resize、scroll事件
 
 从技术的角度讲，所有的JavaScript函数都是闭包；它们都是对象，它们都关联到作用域链。-《JavaScript权威指南》
 
-当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在当前词法作用域之外执行。
+当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在当前词法作用域之外执行。-《你不知道的JavaScript》
 
 * Code Example
 
@@ -278,3 +282,14 @@ asyncPrint('Hello World!', 50);
 3: (解析)正在解析响应内容
 
 4: (完成)响应内容解析完成
+
+### 图片处理
+
+* 图片预加载
+
+**原理**
+
+通过CSS或者JavaScript，先请求图片到本地，再利用浏览器的缓存机制，当要使用图片时(图片路径一致)，浏览器直接从本地缓存获取到图片，加快图片的加载速度。
+
+* 图片懒加载
+

@@ -61,3 +61,13 @@ AMD和CMD最大的区别是对依赖模块的执行时机处理不同
 UMD Common.js和AMD的熔合
 
 UMD先判断是否支持Node.js的模块(exports)是否存在，存在则使用Node.js模块模式；判断是否支持AMD(define是否存在)，存在则使用AMD方式加载模块。
+
+### MVC MVP MVVM
+
+参考链接：http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html
+
+### 同步 异步
+
+同步：必须一件一件事做，等前一件做完了才能做下一件事。
+
+异步：发布事情命令就行，完事自行通知。

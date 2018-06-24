@@ -399,3 +399,33 @@ JS能力检测
 
 * CSS媒介查询
 
+### link和import的区别
+
+* 从属关系
+
+link是XHTML提供的标签，不仅可以加载CSS文件，还可以定义RSS等事物。
+
+import是CSS提供的语法规则，只能导入样式表。
+
+* 加载顺序
+
+link在页面加载时同时加载。
+
+import时在页面加载完成之后再加载。
+
+* 兼容性问题
+
+link不存在兼容性问题
+
+@import是CSS2.1才有的语法，只可在IE5+才能识别。
+
+* DOM可控性
+
+link支持使用JavaScript控制DOM去改变样式，@import不支持。
+
+* 权重
+
+link引入的样式权重大于@import引入的样式
+
+
+
