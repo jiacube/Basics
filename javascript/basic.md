@@ -263,11 +263,43 @@ const sleep = (time) => new Promise((resolve, reject) => setTimeout(resolve, tim
 * Generator
 
 ````
-function* sayHelloWorld() {
-    yield 'Hello';
-    yield 'World';
-    return 'End';
+function createIterator(items) {
+    var i = 0;
+    return {
+        next: function() {
+            var done = (i >= items.length),
+                value = done ? undefined : items[i++];
+            return {
+                done: done,
+                value: value
+            };
+        }
+    };
 }
+
+//创建generator函数的方式
+//函数声明
+function* createIterator() {
+    yield 1;
+    yield 2;
+    return 3;
+}
+
+//函数表达式
+const createIterator = function* () {
+    yield 1;
+    yield 2;
+    return 3;
+}
+
+//对象简写
+let o = {
+    *createIterator(items) {
+        yield 1;
+        yield 2;
+        return 3;
+    }
+};
 ````
 
 * Async
