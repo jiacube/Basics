@@ -18,7 +18,7 @@ Node.js提供了cluster模块和child_process模块创建子进程，从而提�
 然后再去宏任务队列中取出一个事件，同一个事件循环中，
 微任务永远在宏任务之前执行。
 
-![事件循环](images/eventLoop.png)
+![事件循环](../images/eventLoop.png)
 
 同步和异步任务分别进入不同的执行"场所"，同步的进入主进程，异步的进入Event Table并注册函数。
 
@@ -28,11 +28,11 @@ Node.js提供了cluster模块和child_process模块创建子进程，从而提�
 
 上述过程会不断重复，也就是常说的Event Loop(事件循环)。
 
---------------------------
+--------------------
 
 JS引擎存在monitoring process进程，会持续不断地检查主进程执行栈是否为空，一旦为空，就会去Event Queue那里检查是否有等待被调用的函数。
 
---------------------------
+--------------------
 
 setTimeout这个函数是经过指定时间后，把要执行的任务加入到Event Queue中
 
@@ -40,7 +40,7 @@ setTimeout(fn, 0)的含义是指定某个任务在主线程最早可得的空闲
 
 #### Node
 
-![事件循环](images/nodeEventLoop.png)
+![事件循环](../images/nodeEventLoop.png)
 
 * timer
 
