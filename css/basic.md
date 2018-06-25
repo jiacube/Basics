@@ -427,5 +427,13 @@ link支持使用JavaScript控制DOM去改变样式，@import不支持。
 
 link引入的样式权重大于@import引入的样式
 
+### 获取宽高
 
+* getComputedStyle
+
+getComputedStyle会获取当前元素所有最终使用的CSS属性值
+
+window.getComputedStyle <=> document.defaultView.getComputedStyle
+
+计算得出 会引起回流
 

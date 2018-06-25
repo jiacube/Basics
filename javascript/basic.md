@@ -82,24 +82,26 @@ session的运行依赖于session ID, session ID是存在于Cookie中。
 
 * domain.name 子域
 
-### 事件循环(Event Loop)
-
-执行栈 事件队列(Task Queue)
-
-宏任务：setInterval()   setTimeout()
-
-微任务：new Promise()   new MutaionObsever()
-
-当前的执行栈执行完毕时会立刻先处理所有微任务队列中的事件，
-然后再去宏任务队列中取出一个事件，同一个事件循环中，
-微任务永远在宏任务之前执行。
-
 ### 声明提升(变量|函数)
 
 ````
 function a(){}
 var a;
 console.log(typeof a); //function
+````
+
+````
+console.log(a); //undefined
+var a = 1;
+var getNum = function() {
+    a = 2;
+}
+function getNum() {
+    a = 3;
+}
+console.log(a); //1
+getNum();
+console.log(a); //2
 ````
 
 ### 原型及原型链
@@ -188,6 +190,12 @@ window对象的resize、scroll事件
 
 当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在当前词法作用域之外执行。-《你不知道的JavaScript》
 
+* 作用
+
+读取函数内部的变量
+
+让这些变量始终在内存中
+
 * Code Example
 
 ````
@@ -241,6 +249,16 @@ html5 websoket | WebSocket通过Flash | XHR长时间连接 | XHR Multipart Strea
 回调函数   事件监听   发布/订阅   Promise对象
 
 * Promise
+
+````
+const sleep = (time) => new Promise((resolve, reject) => setTimeout(resolve, time));
+(async function(){
+    for (var i = 0; i < 5; i++) {
+        await sleep(1000);
+        console.log(i);
+    }
+})();
+````
 
 * Generator
 

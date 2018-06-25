@@ -96,13 +96,21 @@ TCP是基于字节流的，将数据看做无结构的字节流进行传输，�
 
 500 Internal Server Error   502 Bad Gateway   503 Service Unavailable   504 Gateway Timeout   505 HTTP Version Not Supported
 
+1XX: 指示信息，表示请求已接收，继续处理
+
+2XX: 成功，表示请求已被成功接收、理解
+
+3XX: 重定向，要完成请求必须进行更近一步的操作
+
+4XX: 客户端错误，请求要语法错误或请求无法实现
+
+5XX: 服务器端错误，服务器未能实现合法的请求
+
 ### 方法
 
-GET、POST、PUT、DELETE、HEAD
+HTTP1.0: GET、POST、HEAD
 
-* GET和POST的区别
-
-### 跨域
+HTTP1.1: OPTIONS、PUT、DELETE、TRACE、CONNECT
 
 ### 浏览器输入URL到页面显示整个过程发生了什么
 
@@ -127,3 +135,41 @@ GET、POST、PUT、DELETE、HEAD
 * 根据Render Tree开始渲染和展示
 
 * 遇到script时，会执行并阻塞渲染
+
+### 缓存
+
+#### 强缓存
+
+* expires(HTTP1.0)
+
+绝对时间的GMT格式的时间字符串
+
+如果发送请求的时间在expires之前，那么本地缓存始终有效，否则就会发送请求到服务器来获取资源。
+
+* cache-control(HTTP1.1)
+
+max-age=number
+
+no-cache: 不使用本地缓存，需要使用协商缓存。
+
+no-store: 直接禁止浏览器缓存数据，每次用户请求该资源，都会向服务器发送一个请求，每次都会下载完整的资源。
+
+public: 可以被所有用户缓存
+
+private: 只能被终端用户的浏览器缓存
+
+* 如果cache-control和expires同时存在的话，cache-control的优先级高于expires
+
+#### 协商缓存
+
+是由服务器来确定缓存资源是否可用的。
+
+成对出现，即第一次请求的响应头带上某个字段(Last-Modified或者ETag)，则后续请求则会带上对应的请求字段(If-Modified-Since或者If-None-Match)，若响应头没有Last-Modified或者ETag字段，则请求头也不会有对应的字段。
+
+Last-Modified/If-Modified-Since
+
+ETag/If-None-Match
+
+Last-Modified与ETag优先验证Tag
+
+![缓存](images/cache.png)

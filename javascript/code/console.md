@@ -12,6 +12,12 @@ for (var i = 0; i < 5; i++) {
 }
 
 for (var i = 0; i < 5; i++) {
+    setTimeout(function(i){
+        console.log(i);
+    }, i * 1000, i);
+}
+
+for (var i = 0; i < 5; i++) {
     (function(i) {
         setTimeout(function(){
             console.log(i); //每隔1s分别输出0，1，2，3，4
@@ -318,6 +324,17 @@ const obj5 = {
     name: 'obj5',
     showName: console.log(name)
 };
+````
+
+### toString
+
+````
+var a = {},
+    b = {key: 'a'},
+    c = {key: 'c'};
+a[b] = '123';
+a[c] = '456';
+console.log(a); //[obejct Object]: "456"
 ````
 
   
