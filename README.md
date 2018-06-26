@@ -10,6 +10,7 @@
 * [前端性能优化](efficiency.md)
 * CSS
   * [基础知识](css/basic.md)
+  * [CSS布局](css/code.md)
 * [HTML](html.md)
 * Show Me Your Code
   * [JavaScript 功能实现](javascript/code/code.md)

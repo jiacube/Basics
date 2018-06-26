@@ -76,9 +76,54 @@ session的运行依赖于session ID, session ID是存在于Cookie中。
 
 * Node.js中间件代理跨域
 
-* 跨域资源共享CORS   Access-Control-Allow-Origin: *
+* 跨域资源共享CORS
 
-* JSONP get
+浏览器和服务器端通过头部信息来进行沟通确认是否给予响应。
+
+1. 简单请求 Access-Control-开头
+
+Access-Control-Allow-Origin
+
+Access-Control-Allow-Credentials: Bool值，是否允许发送Cookie
+
+Access-Controll-Allow-Methods
+
+2. 非简单请求 [预检请求]
+
+* JSONP
+
+利用script标签中src属性的链接可以访问跨域的js脚本。服务器不再返回JSON格式的数据，而是返回一段调用某个函数的js代码，在src中进行调用。
+
+````
+//JS代码
+function handle(dataFromServer) {
+    console.log(dataFromServer);
+}
+
+//服务器返回的内容
+handle({'name': 'YXQ'});
+````
+
+* window.postMessage
+
+window.open() | iframe
+
+HTML5提供了在网页文档之间相互接收与发送信息的功能。
+
+获取到网页所在窗口对象的实例
+
+````
+//otherWindow始终是你要通信的目标页面的window
+otherWindow.postMessage(message, targetOrigin, [transfer]);
+window.addEventListener('message', function(e){
+    /*
+        source:消息源，消息的发送窗口
+        origin:消息源的URI(可能包含协议、域名和端口)，用来验证数据源
+        data:发送方发送给接送方的数据
+    */
+}, false);
+//window.attachEvent('message', function(e){})
+````
 
 * domain.name 子域
 
@@ -342,4 +387,12 @@ asyncPrint('Hello World!', 50);
 通过CSS或者JavaScript，先请求图片到本地，再利用浏览器的缓存机制，当要使用图片时(图片路径一致)，浏览器直接从本地缓存获取到图片，加快图片的加载速度。
 
 * 图片懒加载
+
+### 贪婪匹配&非贪婪匹配
+
+贪婪匹配: 正则表达式一般趋向于最长长度匹配。
+
+非贪婪匹配: 匹配到结果就好、就少的匹配字符。
+
+默认是贪婪模式;在量词后面直接加上一个问号?就是非贪婪模式。
 

@@ -98,6 +98,35 @@ console.log(2);
 //1 2 4 3
 ````
 
+* EX3 all race
+
+````
+let p1 = new Promise((resolve) => {
+    setTimeout(() => {
+        console.log('1s');
+        resolve(1);
+    }, 1000);
+});
+let p10 = new Promise((resolve) => {
+    setTimeout(() => {
+        console.log('10s');
+        resolve(10);
+    }, 10000);
+});
+let p5 = new Promise((resolve) => {
+    setTimeout(() => {
+        console.log('5s');
+        resolve(5);
+    }, 5000);
+});
+Promise.all([p1, p10, p5]).then((res) => {
+    console.log(res); //[1, 10, 5]
+});
+Promise.race([p1, p10, p5]).then((res) => {
+    console.log(res); //1
+});
+````
+
 ### 字符串
 
 * slice、substring和substr的区别
@@ -324,6 +353,20 @@ const obj5 = {
     name: 'obj5',
     showName: console.log(name)
 };
+````
+
+### 继承
+
+````
+function P(){}
+P.prototype.a = 'a';
+function C(){}
+C.prototype = new P();
+var obj1 = new C();
+//第一种
+obj1.__proto__.__proto__.a = 'c';
+//第二种
+obj1.constructor.prototype.a = 'c';
 ````
 
 ### toString
