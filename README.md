@@ -5,6 +5,7 @@
   * [BOM](javascript/dom.md)
   * [新技术](javascript/new.md)
   * [Node](javascript/node.md)
+  * [继承](javascript/inherit.md)
 * [安全](safety.md)
 * [HTTP](HTTP.md)
 * [前端性能优化](efficiency.md)

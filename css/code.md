@@ -111,7 +111,7 @@
 
 ### 右边宽度固定，左边自适应
 
-* 方法1
+* flex
 
 ````
 <style>
@@ -135,7 +135,7 @@
 </body>
 ````
 
-* 方法2
+* float + margin
 
 ````
 <style>
@@ -157,6 +157,10 @@
     <div class="left"></div>
 </body>
 ````
+
+* 绝对布局 + margin
+
+* float + calu
 
 ### 圣杯布局和双飞翼布局
 
