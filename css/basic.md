@@ -18,6 +18,10 @@
 
 ![CSS选择器](../images/cssSelector5.png)
 
+![CSS选择器](../images/cssSelector6.png)
+
+![CSS选择器](../images/cssSelector7.png)
+
 * CSS选择器优先级
 
 1.内联样式，如style="XXX"，权值为1000
