@@ -228,7 +228,7 @@ wrap: 换行，第一行在上方
 
 wrap-reverse: 换行，第一行在下方
 
-* flex-row属性时flex-direction属性和flex-wrap属性的简写形式。
+* flex-flow属性时flex-direction属性和flex-wrap属性的简写形式。
 
 * justify-content属性定义了项目在主轴上的对齐方式
 
@@ -335,6 +335,12 @@ Grid布局由两个核心组成部分wrapper(父元素)和items(子元素)。wra
     grid-column-end: 4;
 }
 ````
+
+### display
+
+![display布局](../images/display1.png)
+
+![display表格](../images/display2.png)
 
 ### 内联元素 块级元素
 
