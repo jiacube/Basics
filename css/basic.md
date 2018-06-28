@@ -344,24 +344,57 @@ Grid布局由两个核心组成部分wrapper(父元素)和items(子元素)。wra
 
 ### 内联元素 块级元素
 
-* 内联元素 display: inline;
+* inline 内联元素
 
-a br img input span textarea
+strong em label input select textarea img br a
 
-* 块级元素 display: block;
+* block 块级元素
 
-div dl(定义列表) form h1 hr ol(排序表单) p table
+blockquote标签定义摘自另一个源的块引用。
+
+ol ul
+
+dl标签定义了定义列表(definition list)。
+
+dl标签用于结合dt(定义列表中的项目)和dd(描述列表中的项目)
 
 ````
+<ol start="7">
+    <li>Tea</li>
+</ol>
+
 <dl>
     <dt>计算器</dt>
     <dd>用来计算的仪器</dd>
 </dl>
-
-<ol start="7">
-    <li>Tea</li>
-</ol>
 ````
+
+table form
+
+fieldset标签可以将表单内的相关元素分组。
+
+````
+<form>
+    <fieldset>
+        <!-- 
+<legend>标签为<fieldset>标签定义标题。 -->
+        <legend>Personalia:</legend>
+        Name: <input type="text"/>
+    </fieldset>
+</form>
+````
+
+pre元素可定义预格式化的文本。被包围在pre元素中的文本通常会保留空格和换行符。
+
+#### 内联元素和块级元素的区别
+
+块级元素总是在新行上开始；内联元素都在一行上
+
+内联元素设置高度、上下margin/padding无效
+
+块级元素宽度缺省是它的容器的100%，除非设定一个宽度。宽度就是它的文字或图片的宽度，不可改变
+
+块级元素可以容纳内联元素和其他块级元素；内联元素只能容纳文本或者其他内联元素
 
 ### margin: 0 auto;元素无法水平居中的原因
 
