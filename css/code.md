@@ -284,3 +284,19 @@
     <footer>footer</footer>
 </body>
 ````
+
+### 类的实现
+
+* clearfix
+
+````
+//伪元素:after
+.clearfix:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.clearfix {
+    *zoom: 1; /* 兼容IE低版本 */
+}
+````

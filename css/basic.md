@@ -1,6 +1,6 @@
 ### CSS选择器
 
-* CSS选择器
+#### CSS选择器
 
 ![CSS选择器](../images/cssSelector1.png)
 
@@ -16,17 +16,17 @@
 
 ![CSS选择器](../images/cssSelector7.png)
 
-* CSS选择器优先级
+#### CSS选择器优先级
 
-1.内联样式，如style="XXX"，权值为1000
+* 内联样式，如style="XXX"，权值为1000
 
-2.ID选择器，如#content，权值为100
+* ID选择器，如#content，权值为100
 
-3.类、伪类和属性选择器，如.content、:hover、[attribute]，权值为10
+* 类、伪类和属性选择器，如.content、:hover、[attribute]，权值为10
 
-4.元素和伪元素选择器，如div、p，权值为1
+* 元素和伪元素选择器，如div、p，权值为1
 
-5.通用选择器(*)、子选择器(>)和相邻同胞选择器(+)权值为0
+* 通用选择器(*)、子选择器(>)和相邻同胞选择器(+)权值为0
 
 ### 伪类 伪元素
 
@@ -77,11 +77,11 @@ box-sizing: border-box;
 
 * box垂直方向的距离由margin决定，属于同一个BFC的两个相邻box的margin会发生重叠
 
-* 每个元素的margin box的左边，与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
+* 每个元素的margin box的左边，与包含块border box的左边相接触(对于从左往右的格式化，否则相反)，即使存在浮动也是如此。
 
 * BFC的区域不会与float box重叠
 
-* BFC是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外部的元素。反之也如此。
+* BFC是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外部的元素，反之也如此
 
 * 计算BFC高度的时候，浮动元素也会参与计算
 
@@ -105,71 +105,61 @@ box-sizing: border-box;
 
 * 防止垂直margin重叠
 
-### float
-
-破坏性 包裹性 清空格
-
-````
-//伪元素:after
-.clearfix:after {
-    content: '';
-    display: table;
-    clear: both;
-}
-.clearfix {
-    *zoom: 1; /* 兼容IE低版本 */
-}
-````
-
 ### position
 
-* static | inherit
+#### static | inherit
 
-* relative
+#### relative
 
 relative会导致自身位置的相对变化，而不会影响其他元素的位置、大小。
 
-* absolute
+#### absolute
 
-1.**absolute元素脱离了文档结构**：和relative不同，其他三个元素的位置重新排列了。只要元素会脱离文档结构，它就会产生破坏性，导致父元素坍塌。
+absolute元素脱离了文档结构: 和relative不同，其他三个元素的位置重新排列了。只要元素会脱离文档结构，它就会产生破坏性，导致父元素坍塌。
 
-2.**包裹性**：之前<p>的宽度是撑满整个屏幕的，而此时<p>的宽度刚好时内容的宽度。
+包裹性: 之前p的宽度是撑满整个屏幕的，而此时p的宽度刚好时内容的宽度。
 
-3.**跟随性**：虽然absolute元素脱离了文档结构，但是它的位置并没有发生变化，还是老老实实地呆在它原本的位置，因为我们此时没有设置top、left的值。
+跟随性: 虽然absolute元素脱离了文档结构，但是它的位置并没有发生变化，还是老老实实地呆在它原本的位置，因为我们此时没有设置top、left的值。
 
-4.absolute元素会悬浮在页面上方，会遮挡住下方的页面内容。
+absolute元素会悬浮在页面上方，会遮挡住下方的页面内容。
 
-* sticky
+#### sticky
 
 在屏幕范围(viewport)时该元素的位置并不受到定位影响(设置是top、left属性无效)，当该元素的位置将要移除偏移范围时，定位又会变成fixed，根据设置的left、top等属性成固定位置的效果。
 
-1. sticky出现的原因：监听scroll事件来实现粘性布局使浏览器进入慢滚动的模式，这与浏览器想要通过硬件加速来提升滚动的体验是相驳的。
+##### sticky出现的原因
 
-2. position:sticky的表现上像是position: fixed和position: relative的结合体，特征如下：
+监听scroll事件来实现粘性布局使浏览器进入慢滚动的模式，这与浏览器想要通过硬件加速来提升滚动的体验是相驳的。
 
-元素不会脱离文档流，并保留元素在文档流中占位的大小
+##### position:sticky的表现上像是position: fixed和position: relative的结合体，特征如下：
 
-元素在容器中被滚动超过指定的偏移值时，元素在容器内固定在指定位置
+* 元素不会脱离文档流，并保留元素在文档流中占位的大小
 
-元素固定的相对偏移时相对于离它最近的具有滚动框的祖先元素(BFC|最近的块级祖先元素)，如果祖先元素都不可以滚动，那么是相对于viewport来计算元素的偏移量。
+* 元素在容器中被滚动超过指定的偏移值时，元素在容器内固定在指定位置
 
-3. 生效条件
+* 元素固定的相对偏移时相对于离它最近的具有滚动框的祖先元素(BFC|最近的块级祖先元素)，如果祖先元素都不可以滚动，那么是相对于viewport来计算元素的偏移量。
 
-父元素不能overflow: hidden或者overflow: auto属性
+##### 生效条件
 
-必须指定top、bottom、left、right4个值之一，否则只会处于相对定位
+* 必须指定top, right, bottom或left四个闸值之一，才可使粘性定位生效。否则其行为与相对定位相同。
 
-父元素的高度不能低于sticky元素的高度
+top和bottom同时设置时，top生效的优先级高；left和right同时设置时，left的优先级高。
 
-sticky元素仅在其父元素内生效
+* 设定为position: sticky元素的任意父节点的overflow属性必须是visible，否则position: sticky不会生效。
 
-* 定位上下文
+如果position: sticky元素的任意父节点定位设置为overflow: hidden，则父容器无法进行滚动，所以position: sticky元素也不会有滚动然后固定的情况。
 
-1.relative元素的定位永远时相对于**元素自身**设置的，~~和其他元素没关系，也不会影响其他元素~~。
+如果position: sticky元素的任意父节点定位设置为position: relative | absolute | fixed，则元素相对父元素进行定位，而不会相对viewport定位。
 
-2.fixed元素的定位是相对于**window(或iframe)边界**的，和其他元素没有关系，脱离文档流。但是它具有**破坏性**，~~会导致其他元素位置的变化~~。
+* 达到设定的闸值。设定position: sticky的元素表现为relative | fixed时根据元素是否达到设定的闸值决定的。
 
-3.absoulte会递归查找该元素的所有**父元素**，如果找到一个设置了**position:relative/absolute/fixed**的元素，就以该元素为基准定位，如果没找到，就以**浏览器边界**定位。
+##### 定位上下文
+
+* relative元素的定位永远是相对于元素自身设置的，和其他元素没关系，也不会影响其他元素。
+
+* fixed元素的定位是相对于window(或iframe)边界的，和其他元素没有关系，脱离文档流。但是它具有破坏性，会导致其他元素位置的变化。
+
+* absoulte会递归查找该元素的所有父元素，如果找到一个设置了position:relative/absolute/fixed的元素，就以该元素为基准定位，如果没找到，就以浏览器边界定位。
 
 Code Ex:
 
@@ -226,7 +216,7 @@ wrap: 换行，第一行在上方
 
 wrap-reverse: 换行，第一行在下方
 
-* flex-flow属性时flex-direction属性和flex-wrap属性的简写形式。
+* flex-flow属性是flex-direction属性和flex-wrap属性的简写形式。
 
 * justify-content属性定义了项目在主轴上的对齐方式
 
@@ -311,9 +301,9 @@ align-self: auto | flex-start | flex-end | center | baseline | stretch
 
 Grid布局由两个核心组成部分wrapper(父元素)和items(子元素)。wrapper是实际的grid(网格)，items是grid(网格)内的内容。
 
-定义列和行：grid-template-row grid-template-column
+定义列和行: grid-template-row grid-template-column
 
-定位和调整items(子元素)大小：grid-column grid-row
+定位和调整items(子元素)大小: grid-column grid-row
 
 ````
 .wrapper {
