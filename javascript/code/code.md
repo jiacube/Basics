@@ -91,7 +91,8 @@ function downloadExcel(xhRequest, header, fileName){
                 var windowUrl = window.URL || window.webkitURL || {},
                 url = windowUrl.createObjectURL(blob);
                 ele.href = url;
-                ele.download = fileName;ele.click();
+                ele.download = fileName;
+                ele.click();
                 setTimeout(function(){
                     document.body.removeChild(ele);
                     windowUrl.revokeObjectURL(url);

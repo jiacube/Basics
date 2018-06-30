@@ -67,20 +67,22 @@ function Cat(name){
 
 * 构造函数
 
-使用call或apply方法，把父对象的构造函数绑定在子对象上
+使用call或apply方法，把父对象的this指向子对象
+
+缺点: 不能继承原型上的属性和方法
 
 ````
 function Cat(name) {
     Animal.apply(this, arguments);
     this.name = name;
 }
-var cat1 = new Cat('cat');
-console.log(cat1.species);
 ````
 
 * prototype模式
 
-如果"猫"的prototype对象，指向一个Animal的实例，那么所有"猫"的实例，就能继承Animal了。
+把子对象的prototype对象指向Animal的一个实例
+
+缺点: 如果子对象的prototype对象上有属性或方法时，将被清除
 
 ````
 Cat.prototype = new Animal();
@@ -89,15 +91,24 @@ Cat.prototype.constructor = Cat;
 
 * 直接继承prototype
 
+优点: 与prototype模式相比，效率比较高，比较省内存
+
+缺点: 
+
+如果子对象的prototype对象上有属性或方法时，将被清除
+
+Cat.prototype和Animal.prototype现在指向了同一个对象，那么任何对Cat.prototype的修改，都会反应到Animal.prototype
+
 ````
 Cat.prototype = Animal.prototype;
-//Cat.prototype和Animal.prototype现在指向了同一个对象，那么任何对Cat.prototype的修改，都会反映到Animal.prototype。
 Cat.prototype.constructor = Cat;
 ````
 
 * 利用空对象作为中介
 
 F是空对象，所以几乎不占内存。这时，修改Cat的prototype对象，就不会影响到Animal的prototype对象。
+
+缺点: 如果子对象的prototype对象上有属性或方法，将被清除
 
 ````
 var F = function(){}
@@ -108,7 +119,9 @@ Cat.prototype.constructor = Cat;
 
 * 拷贝继承
 
-如果把父对象的所有属性和方法，拷贝进子对象
+优点: 如果子对象的prototype对象上有属性或方法时，不会被清除；子对象的prototype对象修改后父元素的prototype不会被修改
+
+缺点: 只能继承原型上的属性和方法
 
 ````
 function extend2(Child, Parent) {
