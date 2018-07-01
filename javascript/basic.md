@@ -299,7 +299,7 @@ function testWebSocket() {
 
 ### SVG和Canvas的区别
 
-* SVG
+#### SVG
 
 不依赖分辨率
 
@@ -309,7 +309,7 @@ function testWebSocket() {
 
 不能用来实现网页游戏
 
-* Canvas
+#### Canvas
 
 依赖分辨率
 
@@ -321,7 +321,7 @@ function testWebSocket() {
 
 回调函数   事件监听   发布/订阅   Promise对象
 
-* Promise
+#### Promise
 
 ````
 const sleep = (time) => new Promise((resolve, reject) => setTimeout(resolve, time));
@@ -333,7 +333,9 @@ const sleep = (time) => new Promise((resolve, reject) => setTimeout(resolve, tim
 })();
 ````
 
-* Generator
+#### Generator
+
+1. Generator的实现方式
 
 ````
 function createIterator(items) {
@@ -349,23 +351,33 @@ function createIterator(items) {
         }
     };
 }
+````
 
-//创建generator函数的方式
-//函数声明
+2. 创建generator函数的方式
+
+* 函数声明
+
+````
 function* createIterator() {
     yield 1;
     yield 2;
     return 3;
 }
+````
 
-//函数表达式
-const createIterator = function* () {
+* 函数声明
+
+````
+function* createIterator() {
     yield 1;
     yield 2;
     return 3;
 }
+````
 
-//对象简写
+* 对象简写
+
+````
 let o = {
     *createIterator(items) {
         yield 1;
@@ -375,7 +387,7 @@ let o = {
 };
 ````
 
-* Async
+#### Async
 
 ````
 function timeout(ms) {
@@ -408,11 +420,11 @@ asyncPrint('Hello World!', 50);
 
 ### 图片处理
 
-* 图片预加载
+#### 图片预加载
 
-**原理**
+* 原理
 
 通过CSS或者JavaScript，先请求图片到本地，再利用浏览器的缓存机制，当要使用图片时(图片路径一致)，浏览器直接从本地缓存获取到图片，加快图片的加载速度。
 
-* 图片懒加载
+#### 图片懒加载
 
