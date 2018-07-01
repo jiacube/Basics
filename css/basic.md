@@ -180,7 +180,7 @@ Code Ex:
 
 ### Flex(弹性)布局 一维
 
-参考链接:http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
+参考链接: http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
 
 ![Flex布局](../images/flex.png)
 
@@ -273,6 +273,20 @@ stretch(默认值): 轴线占满整个交叉轴
 * flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间。
 
 * flex属性是flex-grow, flex-shrink, flex-basis的简写。
+
+flex: none <=> flex: 0 0 auto
+
+flex: auto <=> flex: 1 1 auto
+
+flex: 非负数字 <=> flex: number 1 0;(n is a length unit)
+
+设置在子项，数值表示占据剩余空间的份数
+
+flex: 长度或百分比 <=> flex: 1 1 长度或百分比
+
+当flex取值为两个非负数字，则分别视为flex-grow和flex-shrink的值，flex-basis取0%
+
+当flex取值为一个非负数字和一个长度或百分比，则分别视为flex-grow和flex-basis的值，flex-shrink取1。
 
 * align-self属性允许单个项目有与其他项目不一样的对齐方式
 
@@ -383,18 +397,6 @@ pre元素可定义预格式化的文本。被包围在pre元素中的文本通�
 块级元素宽度缺省是它的容器的100%，除非设定一个宽度。宽度就是它的文字或图片的宽度，不可改变
 
 块级元素可以容纳内联元素和其他块级元素；内联元素只能容纳文本或者其他内联元素
-
-### margin: 0 auto;元素无法水平居中的原因
-
-* 该元素需要设置一个宽度
-
-* 该元素不能浮动或绝对定位
-
-* <!DOCTYPE>类型相关定义
-
-* center元素
-
-* 父级元素text-align
 
 ### 渐进增强和优雅降级
 

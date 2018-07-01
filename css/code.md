@@ -1,21 +1,41 @@
 ### 居中
 
-* 水平居中
+#### 水平居中
+
+##### 行内元素水平居中
 
 ````
-//行内元素
 .inline-element {
     text-align: center;
 }
-//块级元素
-.block-element {
-    text-align: center;
-}
+````
+
+##### 块级元素水平居中
+
+1. margin: 0 auto
+
+````
 .item-block-element {
-    width: 1000px;
-    margin: auto;
+    width: 100px;
+    height: 100px;
+    border: 1px black solid;
+    margin: 0 auto;
 }
-//绝对定位元素结合left和margin实现，但是必须知道宽度
+````
+
+* margin: 0 auto;元素无法水平居中的原因
+
+该元素需要设置一个宽度
+
+该元素不能浮动或绝对定位
+
+DOCTYPE类型相关定义
+
+2. 绝对定位元素结合left和margin实现
+
+必须知道宽度
+
+````
 .position-element {
     width: 500px;
     height: 100px;
@@ -30,19 +50,18 @@
 }
 ````
 
-* 垂直居中
+#### 行内元素垂直居中
 
 ````
-//行内元素
 .inline-element {
     height: 50px;
     line-height: 50px;
 }
 ````
 
-### 水平垂直居中
+#### 水平垂直居中
 
-* 方法1: 绝对定位+transform
+1. 绝对定位+transform
 
 优点：不需要提前知道尺寸
 
@@ -62,7 +81,7 @@
 }
 ````
 
-* 方法2: 绝对定位元素+left+margin
+2. 绝对定位+left+margin
 
 缺点：必须知道尺寸
 
@@ -91,11 +110,11 @@
 }
 #center {
     position: absolute;
-    margin: auto;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    margin: auto;
 }
 ````
 
@@ -111,11 +130,62 @@
 
 ### 右边宽度固定，左边自适应
 
-* flex
+1. float + margin
+
+````
+<style>
+    .right {
+        float: right;
+        width: 200px;
+        height: 200px;
+        backgroud-color: rebeccapurple;
+    }
+    .left {
+        height: 200px;
+        margin-right: 200px;
+        background-color: red;
+    }
+</style>
+<body>
+    <div class="right"></div>
+    <div class="left"></div>
+</body>
+````
+
+2. 绝对布局 + margin
+
+````
+<style type="text/css">
+    .left {
+    	width: 100%;
+    	height: 100px;
+    	position: absolute;
+    	right: 200px;
+        background-color: green;
+    }
+    .right {
+    	width: 200px;
+    	height: 100px;
+    	position: absolute;
+    	right: 0;
+    	background-color: red;
+    }	
+</style>
+<body style="position: relative;">
+	<div class="left"></div>
+	<div class="right"></div>
+</body>
+````
+
+3. flex
 
 ````
 <style>
     body {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
         display: flex;
     }
     .left {
@@ -135,32 +205,28 @@
 </body>
 ````
 
-* float + margin
+4. float + calc
 
 ````
-<style>
-    div {
-        height: 200px;
+<style type="text/css">
+    .left {
+    	width: calc(100% - 200px);
+    	height: 100px;
+    	float: left;
+    	background-color: green;
     }
     .right {
-        float: right;
-        width: 200px;
-        backgroud-color: rebeccapurple;
-    }
-    .left {
-        margin-right: 200px;
-        background-color: red;
+    	width: 200px;
+    	height: 100px;
+    	float: left;
+    	background-color: red;
     }
 </style>
 <body>
-    <div class="right"></div>
-    <div class="left"></div>
+	<div class="left"></div>
+	<div class="right"></div>
 </body>
 ````
-
-* 绝对布局 + margin
-
-* float + calu
 
 ### 圣杯布局和双飞翼布局
 
