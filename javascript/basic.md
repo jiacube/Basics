@@ -1,6 +1,6 @@
 ### this
 
-**this是调用函数的那个对象**
+#### this是调用函数的那个对象
 
 * 当在函数调用的时候指向window
 
@@ -10,7 +10,7 @@
 
 * 构造函数调用指向实例对象
 
-**箭头函数的this对象**就是定义时所在的对象，而不是使用时所在的对象。
+#### 箭头函数的this对象就是定义时所在的对象，而不是使用时所在的对象。
 
 ### call、apply和bind
 
@@ -30,11 +30,13 @@ func.apply(this, [arg1, arg2]);
 
 ### 存储方式
 
-cookie、sessionStorage、localStorage、indexedDB
+#### cookie、sessionStorage、localStorage、indexedDB
 
-**相同点**：都保存在浏览器端，同源
+##### 相同点
 
-**不同点**：
+都保存在浏览器端，同源
+
+##### 不同点
 
 * 传递方式不同
 
@@ -72,17 +74,17 @@ session的运行依赖于session ID, session ID是存在于Cookie中。
 
 若地址里面的协议、域名和端口号都相同则属于同源。
 
-**跨域处理方式**：
+#### 跨域处理方式
 
-* Ngnix反向代理
+1. Ngnix反向代理
 
-* Node.js中间件代理跨域
+2. Node.js中间件代理跨域
 
-* 跨域资源共享CORS
+3. 跨域资源共享CORS
 
 浏览器和服务器端通过头部信息来进行沟通确认是否给予响应。
 
-1. 简单请求 Access-Control-开头
+* 简单请求 Access-Control-开头
 
 Access-Control-Allow-Origin
 
@@ -90,9 +92,9 @@ Access-Control-Allow-Credentials: Bool值，是否允许发送Cookie
 
 Access-Controll-Allow-Methods
 
-2. 非简单请求 [预检请求]
+* 非简单请求 [预检请求]
 
-* JSONP
+4. JSONP
 
 利用script标签中src属性的链接可以访问跨域的js脚本。服务器不再返回JSON格式的数据，而是返回一段调用某个函数的js代码，在src中进行调用。
 
@@ -106,7 +108,7 @@ function handle(dataFromServer) {
 handle({'name': 'YXQ'});
 ````
 
-* window.postMessage
+5. window.postMessage
 
 window.open() | iframe
 
@@ -127,7 +129,7 @@ window.addEventListener('message', function(e){
 //window.attachEvent('message', function(e){})
 ````
 
-* domain.name 子域
+6. domain.name 子域
 
 ### 声明提升(变量|函数)
 
@@ -153,17 +155,19 @@ console.log(a); //2
 
 ### 函数节流(throttle) | 函数去抖(debounce)
 
+#### 适应场景
+
 * 频繁执行DOM操作、资源加载等行为，导致UI停顿甚至浏览器崩溃
 
-window对象的resize、scroll事件
+* window对象的resize、scroll事件
 
-拖拽时的mousemove事件
+* 拖拽时的mousemove事件
 
-射击游戏中的mousedown、keydown事件
+* 射击游戏中的mousedown、keydown事件
 
-文字输入、自动完成的keyup事件
+* 文字输入、自动完成的keyup事件
 
-* debounce函数去抖
+#### debounce函数去抖
 
 手指一直按住一个弹簧，它将不会弹起直到你松手为止。
 
@@ -183,7 +187,7 @@ var debounce = function(time, fn) {
 }
 ````
 
-* throttle函数节流
+#### throttle函数节流
 
 水龙头拧紧直到水是以水滴的形式流出，那你会发现每隔一段时间，就会有一滴水流出。
 
