@@ -467,3 +467,22 @@ window.getComputedStyle <=> document.defaultView.getComputedStyle
 ### 栅格布局
 
 通过定义容器大小，平分成12份，在调整内外边距，最后结合媒体查询，就制作出强大的响应式栅格系统。
+
+### 清除浮动的方法
+
+使用overflow:hidden|overflow:auto属性来清除浮动
+
+额外标签法
+
+使用伪元素来清除浮动
+
+````
+.clearfix:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.clearfix {
+    *zoom: 1; /* 兼容IE低版本 */
+}
+````

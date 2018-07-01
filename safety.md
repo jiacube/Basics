@@ -30,6 +30,22 @@ X-XSS-Protection: 对反射型XSS进行一些防御，当检测到跨站脚本�
 
 ### CSRF(跨站请求伪造，Cross-site request forgery)
 
+#### CSRF
+
+![CSRF](images/csrf.png)
+
+1: 浏览并登陆信任网站
+
+2: 验证通过，在Client产生信任网站的Cookie
+
+3: 用户在没有登出信任网站的情况下，访问危险网站
+
+4: 危险网站要求访问信任网站，发出一个请求
+
+5: 根据信任网站在4的请求，浏览器带着2产生的Cookie访问
+
+6: 信任网站不知道5中的请求是Client发出的还是危险网站发出的，由于浏览器会自动发出Client的Cookie，所以信任网站会根据用户的权限处理5的请求，这样危险网站就达到了模拟用户操作的目的。
+
 #### 解决方案
 
 * 检查http refer是否是同域名
@@ -50,6 +66,12 @@ Strict-Transport-Security: HTTP Strict Transport Security(通常简称HSTS)告�
 
 X-Frame-Options禁止防止网页被框架盗链或者点击劫持。
 
+DENY: 表示该页面不允许在frame中展示，即便是在相同域名的页面中嵌套也不允许。
+
+SAMEORIGIN: 表示该页面可以在相同域名页面的frame中展示。
+
+ALLOW-FROM uri: 表示该页面可以在指定来源的frame中展示。
+
 ### 其他
 
 * iframe sandbox安全属性
@@ -67,3 +89,9 @@ X-Content-Type-Options: 明确禁止浏览器去推断响应类型(nosniff)，�
 ### Content-Security-Policy(CSP): 网络安全政策[白名单制度]
 
 用来设置允许的资源来源以及对脚本执行环境的控制等。
+
+* 参考链接
+
+http://www.ruanyifeng.com/blog/2016/09/csp.html
+
+https://developer.mozilla.org/zh-CN/docs/Web/Security/CSP
