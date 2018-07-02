@@ -77,6 +77,15 @@ box-sizing: border-box;
 
 * box垂直方向的距离由margin决定，属于同一个BFC的两个相邻box的margin会发生重叠
 
+````
+//margin-top显示效果在父元素上
+<div style="width:100px;height:200px;background-color: peru;">
+    <div style="width:10px;height: 10px;background-color: green;margin: 10%;"></div>
+</div>
+````
+
+参考链接: https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing
+
 * 每个元素的margin box的左边，与包含块border box的左边相接触(对于从左往右的格式化，否则相反)，即使存在浮动也是如此。
 
 * BFC的区域不会与float box重叠
@@ -486,3 +495,18 @@ window.getComputedStyle <=> document.defaultView.getComputedStyle
     *zoom: 1; /* 兼容IE低版本 */
 }
 ````
+
+### 单位
+
+#### %
+
+````
+//%根据父级div的宽度
+<div style="width:100px;height:200px;border:1px solid black;background-color: peru;">
+    <div style="width:10px;height: 10px;background-color: green;margin: 10%;"></div>
+</div>
+````
+
+
+
+
