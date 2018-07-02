@@ -58,6 +58,22 @@ UMD Common.js和AMD的熔合
 
 UMD先判断是否支持Node.js的模块(exports)是否存在，存在则使用Node.js模块模式；判断是否支持AMD(define是否存在)，存在则使用AMD方式加载模块。
 
+#### JavaScript模块的循环加载
+
+参考链接: http://www.ruanyifeng.com/blog/2015/11/circular-dependency.html
+
+##### CommonJS模块
+
+一旦出现某个模块被"循环加载"，就只输出已经执行的部分，还未执行的部分不会输出。
+
+##### ES6模块
+
+遇到模块加载命令import时，不会去执行模块，而是只生成一个引用。等到真的需要用到时，再到模块里面去取值。
+
+ES6模块是动态引用，不存在缓存值的问题。
+
+ES6根本不会关心是否发生了"循环加载"，只是生成一个指向被加载模块的引用，需要开发者自己保证，真正取值的时候能够取到值。
+
 ### MVC MVP MVVM
 
 参考链接：http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html
