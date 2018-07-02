@@ -127,34 +127,6 @@ Promise.race([p1, p10, p5]).then((res) => {
 });
 ````
 
-### 字符串
-
-* slice、substring和substr的区别
-
-````
-var str = 'Hello World!'
-/*
-slice
-    两个参数：起始位置和结束位置（不包括结束位置）
-    当接收的参数是负数时，slice会将字符串的长度和对应的负数相加，结果作为参数
-*/
-console.log(str.slice(4, 7));//o W
-
-/*
-substring
-    两个参数：起始位置和结束位置（不包括结束位置）
-    substring是以两个参数中较小一个作为起始位置，较大的参数作为结束位置substring将负参数转换为0
-*/
-console.log(str.substring(7, -6));//Hello W
-
-/*
-substr
-    两个参数：起始位置和所要返回的字符串长度
-    将负的第一个参数加上字符串的长度，第二个参数转换为0
-*/
-console.log(str.substr(-6, 7));//World!
-````
-
 ### 表达式和运算符
 
 #### 赋值表达式

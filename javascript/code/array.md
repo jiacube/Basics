@@ -1,3 +1,128 @@
+### 数组的方法
+
+#### join()
+
+作用: 可以把一个数组的所有元素都转换成字符串，然后再把它们连接起来。
+
+参数: 分隔符；无参数，默认,分隔
+
+是否修改原始值: 否
+
+返回值: 字符串
+
+````
+var beforeArr = [1, 2, 3],
+    returnStr = beforeArr.join();
+console.log(beforeArr); //[1, 2, 3]
+console.log(returnStr); //1,2,3
+````
+
+#### reverse()
+
+作用: 颠倒数组元素的顺序并返回颠倒后的数组。
+
+参数: 无参数
+
+是否修改原始值: 是 
+
+返回值: 颠倒后的数组
+
+````
+var beforeArr = [1, 2, 3],
+    afterArr = beforeArr.reverse();
+console.log(beforeArr); //[3, 2, 1]
+console.log(afterArr); //[3, 2, 1]
+````
+
+#### sort()
+
+* 作用: 在原数组上对数组元素进行排序，返回排序后的数组。
+
+* 参数: 比较函数
+
+如果比较函数第一个参数应该位于第二个参数之前，那么比较函数将返回一个小于0的数。如果比较函数第一个参数应该位于第二个参数之后，那么比较函数就会返回一个大于0的数。如果两个参数相等，那么比较函数将返回0。
+
+* 是否修改原始值: 是
+
+* 返回值: 排序后的数组
+
+````
+var beforeArr = ['Abc', 'abc', 111, '1bc'];
+console.log(beforeArr.sort()); //[111, "1bc", "Abc", "abc"]
+console.log(beforeArr); //[111, "1bc", "Abc", "abc"]
+````
+
+#### concat()
+
+作用: 创建并返回一个数组
+
+参数: 需要添加的元素，如果有些参数是数组，那么它将被展开
+
+注意: concat()并不能递归展开一个元素为数组的数组
+
+是否修改原始值: 否
+
+返回值: 合并的数组
+
+````
+var arr = [1, 2],
+    addEl1 = ['b', 'c'],
+    addEl2 = [3, [4, 5]],
+    addEl3 = 'd';
+console.log(arr.concat(addEl1, addEl2, addEl3)); //[1, 2, "b", "c", 3, [4, 5], "d"]
+console.log(arr); //[1, 2]
+````
+
+#### splice()
+
+作用: 插入或删除数组元素的通用方法
+
+参数
+
+    第一个参数: 要插入或删除的元素在数组中的位置
+    第二个参数: 要从数组删除的元素个数，被省略则将删除从开始元素到数组结尾处的所有元素
+    后续参数: 从第一个参数指定的位置处开始插入的元素
+
+是否修改原始值: 是
+
+返回值: 删除的元素数组
+
+````
+var arr = [1, 2, 3, 4, 5];
+console.log(arr.splice(1, 2, 'a')); //[2, 3]
+console.log(arr); //[1, "a", 4, 5]
+````
+
+#### slice()
+
+### 字符串
+
+* slice、substring和substr的区别
+
+````
+var str = 'Hello World!'
+/*
+slice
+    两个参数：起始位置和结束位置（不包括结束位置）
+    当接收的参数是负数时，slice会将字符串的长度和对应的负数相加，结果作为参数
+*/
+console.log(str.slice(4, 7));//o W
+
+/*
+substring
+    两个参数：起始位置和结束位置（不包括结束位置）
+    substring是以两个参数中较小一个作为起始位置，较大的参数作为结束位置substring将负参数转换为0
+*/
+console.log(str.substring(7, -6));//Hello W
+
+/*
+substr
+    两个参数：起始位置和所要返回的字符串长度
+    将负的第一个参数加上字符串的长度，第二个参数转换为0
+*/
+console.log(str.substr(-6, 7));//World!
+````
+
 ### 判断是否为数组
 
 ````
