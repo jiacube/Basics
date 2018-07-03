@@ -9,7 +9,7 @@
 * [安全](safety.md)
 * [HTTP](HTTP.md)
 * [前端性能优化](efficiency.md)
-* [数据结构](javascript/algorithm.md)
+* [数据结构](javascript/code/algorithm.md)
 * CSS
   * [基础知识](css/basic.md)
   * [CSS布局](css/code.md)

@@ -1,6 +1,8 @@
 ### 数组的方法
 
-#### join()
+#### ECMAScript3
+
+##### join()
 
 作用: 可以把一个数组的所有元素都转换成字符串，然后再把它们连接起来。
 
@@ -17,7 +19,7 @@ console.log(beforeArr); //[1, 2, 3]
 console.log(returnStr); //1,2,3
 ````
 
-#### reverse()
+##### reverse()
 
 作用: 颠倒数组元素的顺序并返回颠倒后的数组。
 
@@ -34,7 +36,7 @@ console.log(beforeArr); //[3, 2, 1]
 console.log(afterArr); //[3, 2, 1]
 ````
 
-#### sort()
+##### sort()
 
 * 作用: 在原数组上对数组元素进行排序，返回排序后的数组。
 
@@ -52,7 +54,7 @@ console.log(beforeArr.sort()); //[111, "1bc", "Abc", "abc"]
 console.log(beforeArr); //[111, "1bc", "Abc", "abc"]
 ````
 
-#### concat()
+##### concat()
 
 作用: 创建并返回一个数组
 
@@ -73,7 +75,25 @@ console.log(arr.concat(addEl1, addEl2, addEl3)); //[1, 2, "b", "c", 3, [4, 5], "
 console.log(arr); //[1, 2]
 ````
 
-#### splice()
+##### slice()
+
+作用: 返回数组的一个片段和子数组
+
+参数: 片段的开始和结束位置
+
+是否修改原始值: 否
+
+返回值: 第一个参数指定的位置和所有到不含第二个参数指定的位置之间的所有数组元素。
+
+````
+var arr = [1, 2, 3, 4, 5];
+console.log(arr.slice(0, 3)); //[1, 2, 3]
+console.log(arr.slice(2)); //[3, 4, 5]
+console.log(arr.slice(-3, -2)); //[3]
+console.log(arr); //[1, 2, 3, 4, 5]
+````
+
+##### splice()
 
 作用: 插入或删除数组元素的通用方法
 
@@ -93,7 +113,160 @@ console.log(arr.splice(1, 2, 'a')); //[2, 3]
 console.log(arr); //[1, "a", 4, 5]
 ````
 
-#### slice()
+##### push pop
+
+* push
+
+作用: 在数组的尾部添加一个或多个元素
+
+参数: 需要添加的元素
+
+是否修改原始值: 是
+
+返回值: 数组新的长度
+
+````
+var arr = [1, 2, 3, 4, 5];
+console.log(arr.push(6)); //6
+console.log(arr); //[1, 2, 3, 4, 5, 6]
+````
+
+* pop
+
+作用: 删除数组的最后一个元素
+
+参数: 无
+
+是否修改原始值: 是
+
+返回值: 删除的最后一个元素
+
+````
+var arr = [1, 2, 3, 4, 5];
+console.log(arr.pop());
+console.log(arr);
+````
+
+##### unshift shift
+
+* unshift
+
+作用: 在数组的头部添加一个或多个元素
+
+参数: 需要添加的元素
+
+是否修改原始值: 是
+
+返回值: 数组新的长度
+
+````
+var arr = [1, 2, 3, 4, 5];
+console.log(arr.unshift(0)); //6
+console.log(arr); //[0, 1, 2, 3, 4, 5]
+````
+
+* shift
+
+作用: 在数组的头部删除第一个元素并将其返回
+
+参数: 无
+
+是否修改原始值: 是
+
+返回值: 删除的第一个元素
+
+````
+var arr = [1, 2, 3, 4, 5];
+console.log(arr.shift()); //1
+console.log(arr); //[2, 3, 4, 5]
+````
+
+#### ECMAScript5
+
+##### forEach
+
+作用: 遍历
+
+参数: 传递的函数(数组元素 元素的索引 数组本身)
+
+返回值: undefined
+
+````
+var arr = [1, 2, 3, 4, 5],
+    res = arr.forEach(function(item, index, self){
+        self[index] = item + 1;
+    });
+console.log(res, arr); //undefined [2, 3, 4, 5, 6]
+````
+
+##### map
+
+````
+var arr = [1, 2, 3, 4, 5],
+    res = arr.map(function(item, index, self){
+        return item + 1;
+    });
+console.log(res, data); //[2, 3, 4, 5, 6] [1, 2, 3, 4, 5]
+````
+
+##### filter
+
+````
+var arr = [1, 2, 3, 4, 5],
+    res = arr.filter(function(item, index, self){
+        return item % 2 === 0;
+    });
+console.log(arr, res); //[1, 2, 3, 4, 5] [2, 4]
+````
+
+##### every some
+
+* every
+
+作用: 当且仅当针对数组中的所有元素调用判定函数都返回true，它才返回true。
+
+````
+var arr = [1, 2, 3, 4, 5],
+    res = arr.every(function(item, index, self){
+        return item < 6;
+    });
+````
+
+* some
+
+作用: 当数组中至少有一个元素调用判定函数返回true，它就返回true，并且当且仅当数值中的所有元素调用判定元素都返回false，它才会返回false。
+
+````
+var arr = [1, 2, 3, 4, 5],
+    res = arr.some(function(item, index, self){
+        return item > 6;
+    });
+console.log(arr, res); //[1, 2, 3, 4, 5] false
+````
+
+##### reduce reduceRight
+
+作用: reduce和reduceRight方法使用指定的函数将数组元素进行组合，生成单个值。
+
+参数
+
+![reduce参数](../../images/reduce.png)
+
+````
+var arr = [1, 2, 3, 4, 5],
+    res = arr.reduce(function(result, currentValue, currentIndex, arr){
+        result[currentIndex] = currentValue;
+        return result;
+    }, {});
+console.log(arr, res); //[1, 2, 3, 4, 5] {0: 1, 1: 2, 2: 3, 3: 4, 4: 5}
+````
+
+##### indexOf lastIndexOf
+
+````
+var arr = [1, 2, 3, 4, 5];
+console.log(arr.indexOf(2), arr.lastIndexOf(2)); //1 1
+````
 
 ### 字符串
 
