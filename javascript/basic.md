@@ -365,16 +365,6 @@ function* createIterator() {
 }
 ````
 
-* 函数声明
-
-````
-function* createIterator() {
-    yield 1;
-    yield 2;
-    return 3;
-}
-````
-
 * 对象简写
 
 ````
