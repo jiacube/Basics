@@ -349,20 +349,6 @@ async function asyncPrint(value, ms) {
 asyncPrint('Hello World!', 50);
 ````
 
-### Ajax
-
-* readystate
-
-0: (未初始化)未调用open方法
-
-1: (载入)已调用send方法，正在发送请求
-
-2: (载入完成)send完成
-
-3: (解析)正在解析响应内容
-
-4: (完成)响应内容解析完成
-
 ### 图片处理
 
 #### 图片预加载

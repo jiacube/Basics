@@ -174,6 +174,31 @@ Last-Modified与ETag优先验证Tag
 
 ![缓存](images/cache.png)
 
+### Ajax
+
+````
+var xhr = new XMLHttpRequest();
+xhr.open('GET', url);
+xhr.onreadystatechange = function(){
+    if (xhr.readyState === 4 && xhr.status === 200){
+        console.log(xhr.responseText);
+    }
+}
+xhr.send();
+````
+
+#### readystate
+
+0: (未初始化)未调用open方法
+
+1: (载入)已调用send方法，正在发送请求
+
+2: (载入完成)send完成
+
+3: (解析)正在解析响应内容
+
+4: (完成)响应内容解析完成
+
 ### Web端即时通讯
 
 #### 传统Ajax短轮询
@@ -242,4 +267,16 @@ function testWebSocket() {
 ````
 
 #### SSE(Server-sent Events)
+
+### HTTPS
+
+基于SSL的HTTP协议，提供**身份验证**和**加密通信**方法。
+
+#### 与HTTP的区别
+
+* https需要申请证书
+
+* http是明文传输;https是加密传输
+
+* http连接简单，无状态;https是ssl+http协议构建的可进行加密传输、身份认证的网络协议
 
