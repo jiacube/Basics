@@ -272,8 +272,10 @@ http://es6.ruanyifeng.com/#docs/promise
 <tr><td>angular.isString()	</td>	<td>如果引用的是字符串返回 true</td></tr>
 <tr><td>angular.isUndefined()</td>	<td>	如果引用的未定义返回 true</td></tr>
 <tr><td>angular.equals()</td>	<td>	如果两个对象相等返回 true</td></tr>
-</table>	
- **JSON**  
+</table>
+
+ **JSON** 
+ 
 <table>
 <tr><td>API</td>	<td>	描述</td></tr>
 <tr><td>angular.fromJson()	</td>	<td>反序列化 JSON 字符串</td></tr>
