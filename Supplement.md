@@ -99,7 +99,7 @@ console.log(eval(s2));      // logs the string "2 + 2"
 console.log(eval(s2.valueOf())); // logs the number 4
 ```
 模板字面量：
-**ES6标准新增的一种多行字符串表示法，用反引号 \` ... \` 表示，内部引用变量用 **${** xxx **}**
+**ES6标准新增的一种多行字符串表示法，用反引号 \` ... \` 表示，内部引用变量用 **${** xxx **}** 
 
 ```python
 `hello world` `hello! world!` `hello ${who}` escape `<a>${who}</a>`
@@ -145,7 +145,6 @@ String 对象方法
 转义字符
 	<table>
 <tr><td> Code </td>	<td> Output</td></tr>
-<tr><td> --------   </td>	<td>-----: </td></tr>
 <tr><td>\0	</td>	<td>空字符</td></tr>
 <tr><td>\'	</td>	<td>单引号</td></tr>
 <tr><td>\"	</td>	<td>双引号</td></tr>
@@ -216,31 +215,34 @@ MVVM框架-React、Vue、Angular
 
 angular自带的工具类函数
 
-   >转换
-|API|	描述|
-| --------   | -----:  | 
-|angular.lowercase()|	将字符串转换为小写|
-|angular.uppercase()|	将字符串转换为大写|
-|angular.copy()	|数组或对象深度拷贝|
-|angular.forEach()|	对象或数组的迭代函数|
-    >比较
-| API	| 描述 |
-| --------   | -----:  | 
-|angular.isArray()|	如果引用的是数组返回 true|
-|angular.isDate()	|如果引用的是日期返回 true|
-|angular.isDefined()|	如果引用的已定义返回 true|
-|angular.isElement()	|如果引用的是 DOM 元素返回 true|
-|angular.isFunction()|	如果引用的是函数返回 true|
-|angular.isNumber()|	如果引用的是数字返回 true|
-|angular.isObject()	|如果引用的是对象返回 true|
-|angular.isString()	|如果引用的是字符串返回 true|
-|angular.isUndefined()|	如果引用的未定义返回 true|
-|angular.equals()|	如果两个对象相等返回 true|
-    >JSON
-|API|	描述|
-| --------   | -----:  | 
-|angular.fromJson()	|反序列化 JSON 字符串|
-|angular.toJson()|	序列化 JSON 字符串|
+   **转换**
+<table>
+	<tr><td>API</td>	<td>	描述</td></tr>
+<tr><td>angular.lowercase()</td>	<td>	将字符串转换为小写</td></tr>
+<tr><td>angular.uppercase()</td>	<td>	将字符串转换为大写</td></tr>
+<tr><td>angular.copy()	</td>	<td>数组或对象深度拷贝</td></tr>
+<tr><td>angular.forEach()</td>	<td>	对象或数组的迭代函数</td></tr>
+	</table>
+   **比较**
+	<table>
+<tr><td> API	</td>	<td>描述 </td></tr>
+<tr><td>angular.isArray()</td>	<td>	如果引用的是数组返回 true</td></tr>
+<tr><td>angular.isDate()	</td>	<td>如果引用的是日期返回 true</td></tr>
+<tr><td>angular.isDefined()</td>	<td>	如果引用的已定义返回 true</td></tr>
+<tr><td>angular.isElement()	</td>	<td>如果引用的是 DOM 元素返回 true</td></tr>
+<tr><td>angular.isFunction()</td>	<td>	如果引用的是函数返回 true</td></tr>
+<tr><td>angular.isNumber()</td>	<td>	如果引用的是数字返回 true</td></tr>
+<tr><td>angular.isObject()	</td>	<td>如果引用的是对象返回 true</td></tr>
+<tr><td>angular.isString()	</td>	<td>如果引用的是字符串返回 true</td></tr>
+<tr><td>angular.isUndefined()</td>	<td>	如果引用的未定义返回 true</td></tr>
+<tr><td>angular.equals()</td>	<td>	如果两个对象相等返回 true</td></tr>
+	</table>
+    **JSON**
+    <table>
+<tr><td>API</td>	<td>	描述</td></tr>
+<tr><td>angular.fromJson()	</td>	<td>反序列化 JSON 字符串</td></tr>
+<tr><td>angular.toJson()</td>	<td>	序列化 JSON 字符串</td></tr>
+	</table>
 
 ***
 ##打包工具-webpack、grunt、gulp
