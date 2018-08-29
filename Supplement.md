@@ -56,6 +56,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 ***
 
+
 **字符串 **
 
 概念：**String** 全局对象是一个用于字符串或一个字符序列的构造函数。字符串用''或""括起来的字符表示。
@@ -202,7 +203,9 @@ RegExp(pattern [, flags]);
 ```
 ***
 
+
 **Promise **
+
 
 参考链接：
 http://es6.ruanyifeng.com/#docs/promise
@@ -225,20 +228,20 @@ http://es6.ruanyifeng.com/#docs/promise
 
 1. 组件通信
 
-**vue:**http://www.php.cn/js-tutorial-386469.html
-**React:**https://www.jianshu.com/p/fb915d9c99c4
-**angular2+:**https://blog.csdn.net/yaomengzhi/article/details/80277702
-**angualr1:**https://www.cnblogs.com/myzhibie/p/5745018.html
+-vue:http://www.php.cn/js-tutorial-386469.html
+-React:*https://www.jianshu.com/p/fb915d9c99c4
+-angular2+:https://blog.csdn.net/yaomengzhi/article/details/80277702
+-angualr1:https://www.cnblogs.com/myzhibie/p/5745018.html
 
 2. vue-router组件 
 
-官方文档：https://router.vuejs.org/zh/guide/
-参考：https://www.cnblogs.com/SamWeb/p/6610733.html
+-官方文档：https://router.vuejs.org/zh/guide/
+-参考：https://www.cnblogs.com/SamWeb/p/6610733.html
 
 3. axios  
 
-参考（中文）：https://www.kancloud.cn/yunye/axios/234845
-参考（英文）：https://www.npmjs.com/package/axios
+-参考（中文）：https://www.kancloud.cn/yunye/axios/234845
+-参考（英文）：https://www.npmjs.com/package/axios
 
 4. template编译
 
@@ -249,18 +252,18 @@ http://es6.ruanyifeng.com/#docs/promise
    **转换**
    
 <table>
-	<tr><td>API</td>	<td>	描述</td></tr>
+<tr><td>API</td>	<td>	描述</td></tr>
 <tr><td>angular.lowercase()</td>	<td>	将字符串转换为小写</td></tr>
 <tr><td>angular.uppercase()</td>	<td>	将字符串转换为大写</td></tr>
 <tr><td>angular.copy()	</td>	<td>数组或对象深度拷贝</td></tr>
 <tr><td>angular.forEach()</td>	<td>	对象或数组的迭代函数</td></tr>
-	</table>
+</table>
 	
    **比较**
    
-	<table>
-<tr><td> API	</td>	<td>描述 </td></tr>
-<tr><td>angular.isArray()</td>	<td>	如果引用的是数组返回 true</td></tr>
+<table>
+<tr><td> API</td>	<td>描述 </td></tr>
+<tr><td>angular.isArray()</td><td>	如果引用的是数组返回 true</td></tr>
 <tr><td>angular.isDate()	</td>	<td>如果引用的是日期返回 true</td></tr>
 <tr><td>angular.isDefined()</td>	<td>	如果引用的已定义返回 true</td></tr>
 <tr><td>angular.isElement()	</td>	<td>如果引用的是 DOM 元素返回 true</td></tr>
