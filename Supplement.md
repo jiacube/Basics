@@ -1,4 +1,4 @@
-#日期
+日期
 
 日期常规操作
 ```python
@@ -31,7 +31,7 @@ var mytime=myDate.toLocaleTimeString();     //获取当前时间
 myDate.toLocaleString( );        //获取日期与时间
 ```
 
-###日期时间脚本库方法列表
+日期时间脚本库方法列表
 ```python
 Date.prototype.isLeapYear       // 判断闰年
 
@@ -55,7 +55,7 @@ Date.prototype.WeekNumOfYear    //判断日期所在年的第几周
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 
 ***
-##字符串 
+字符串 
 概念：**String** 全局对象是一个用于字符串或一个字符序列的构造函数。字符串用''或""括起来的字符表示。
 用 String 函数将其他值生成或转换成字符串：
 ```python
@@ -63,11 +63,11 @@ String(thing)
 new String(thing)
 //thing——任何可以被转换成字符串的值。
 ```
-###1）长字符串创建：
+1）长字符串创建：
 >* 可以使用 + 运算符将多个字符串连接起来;
 >* 可以在每行末尾使用反斜杠字符（“\”），以指示字符串将在下一行继续;
 
-###2）从字符串中获取单个字符
+2）从字符串中获取单个字符
 
 - [ ] 使用 charAt 方法:
 ```python
@@ -77,7 +77,7 @@ new String(thing)
 ```python
     str[i]; 
 ```
-###3）基本字符串和字符串对象的区别
+3）基本字符串和字符串对象的区别
     字符串字面量 (通过单引号或双引号定义) 和 直接调用 String 方法(没有通过 new 生成字符串对象实例)的字符串都是基本字符串。
     JavaScript会自动将基本字符串转换为字符串对象，只有将基本字符串转化为字符串对象之后才可以使用字符串对象的方法。当基本字符串需要调用一个字符串对象才有的方法或者查询值的时候(基本字符串是没有这些方法的)，JavaScript 会自动将基本字符串转化为字符串对象并且调用相应的方法或者执行查询。
 ```python
@@ -98,7 +98,7 @@ console.log(eval(s2));      // logs the string "2 + 2"
 ```python
 console.log(eval(s2.valueOf())); // logs the number 4
 ```
-###模板字面量：
+模板字面量：
 **ES6标准新增的一种多行字符串表示法，用反引号 \` ... \` 表示，内部引用变量用 **${** xxx **}**
 
 ```python
