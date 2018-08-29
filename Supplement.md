@@ -55,7 +55,8 @@ Date.prototype.WeekNumOfYear    //判断日期所在年的第几周
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 
 ***
-字符串 
+**字符串 **
+
 概念：**String** 全局对象是一个用于字符串或一个字符序列的构造函数。字符串用''或""括起来的字符表示。
 用 String 函数将其他值生成或转换成字符串：
 ```python
@@ -98,13 +99,13 @@ console.log(eval(s2));      // logs the string "2 + 2"
 ```python
 console.log(eval(s2.valueOf())); // logs the number 4
 ```
-模板字面量：
+**模板字面量：**
 **ES6标准新增的一种多行字符串表示法，用反引号 \` ... \` 表示，内部引用变量用 **${** xxx **}** 
 
 ```python
 `hello world` `hello! world!` `hello ${who}` escape `<a>${who}</a>`
 ```
-String 对象方法
+**String 对象方法**
 <table>
 	<tr><td>方法</td>	<td>描述</td></tr>
 <tr><td>anchor()</td>	<td>创建 HTML 锚。</td></tr>
@@ -142,7 +143,7 @@ String 对象方法
 <tr><td>toString()	</td>	<td>返回字符串。</td></tr>
 <tr><td>valueOf()</td>	<td>	返回某个字符串对象的原始值。</td></tr>
 	</table>
-转义字符
+**转义字符**
 	<table>
 <tr><td> Code </td>	<td> Output</td></tr>
 <tr><td>\0	</td>	<td>空字符</td></tr>
@@ -165,8 +166,9 @@ String 对象方法
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String
 
 ***
-正则
+**正则**
 **RegExp** 构造函数创建了一个正则表达式对象，用于将文本与一个模式匹配。
+
 创建 RegExp 对象的语法：
 ```python
 /pattern/flags;
@@ -196,21 +198,37 @@ Promise
 http://es6.ruanyifeng.com/#docs/promise
 
 1. 原理 
+
    Promise 对象用于延迟(deferred) 计算和异步(asynchronous )计算.一个Promise对象代表着一个还未完成，但预期将来会完成的操作。Promise 对象是一个返回值的代理，这个返回值在promise对象创建时未必已知。它允许你为异步操作的成功或失败指定处理方法。 这使得异步方法可以像同步方法那样返回值：异步方法会返回一个包含了原返回值的 promise 对象来替代原返回值。
    
-  ** Promise 对象用来进行延迟( deferred )和异步( asynchronous )计算。一个 Promise 处于以下四种状态之一: 
+ Promise 对象用来进行延迟( deferred )和异步( asynchronous )计算。一个 Promise 处于以下四种状态之一: 
 - pending: 还没有得到肯定或者失败结果，进行中 
 - fulfilled: 成功的操作 
 - rejected: 失败的操作 
 - settled: 已被 fulfilled 或 rejected
-   **
+ 
 2. 实现 
 
 ***
-MVVM框架-React、Vue、Angular
+**MVVM框架-React、Vue、Angular**
+
 1. 组件通信
-2. vue-router组件   
-3. axios   
+
+**vue:**http://www.php.cn/js-tutorial-386469.html
+**React:**https://www.jianshu.com/p/fb915d9c99c4
+**angular2+:**https://blog.csdn.net/yaomengzhi/article/details/80277702
+**angualr1:**https://www.cnblogs.com/myzhibie/p/5745018.html
+
+2. vue-router组件 
+
+官方文档：https://router.vuejs.org/zh/guide/
+参考：https://www.cnblogs.com/SamWeb/p/6610733.html
+
+3. axios  
+
+参考（中文）：https://www.kancloud.cn/yunye/axios/234845
+参考（英文）：https://www.npmjs.com/package/axios
+
 4. template编译
 
 angular自带的工具类函数
@@ -245,56 +263,56 @@ angular自带的工具类函数
 	</table>
 
 ***
-##打包工具-webpack、grunt、gulp
+**打包工具-webpack、grunt、gulp**
     1. webpack
     2. grunt
     3. gulp
 ***
-##继承 
+**继承 **
 1. 继承链
 2. 实现封装、继承、多态等面向对象的基本功能
 3. 使用prototype、function、new、this模拟面向对象的类
 https://m.jb51.net/article/107012.html
 
 ***
-##数据结构
+**数据结构**
 ***
-##性能优化
+**性能优化**
 ***
-##兼容
+**兼容**
 ***
-##自适应
+**自适应**
 	屏幕适配
 	响应式布局
 	
 ***
-##rem
+**rem**
 ***
-##拖拽的实现
+**拖拽的实现**
 	mousedown mousemove mouseup
 ***
-##DOM操作
+**DOM操作**
 ***
-##原生JS封装成组件
+**原生JS封装成组件**
 >参考链接：
 1）封装组件tooltip：https://blog.csdn.net/mobingxiche/article/details/70172952
 2）封装轮播图组件：https://www.cnblogs.com/iceman919/p/6192684.html
 3）封装hash路由组件：http://www.dengzhr.com/js/1241
 4）实现手势解锁组件：https://www.h5jun.com/post/handlock-comp.html
 ***
-##CSS3属性
+**CSS3属性**
 ***
-##Ajax
+**Ajax**
 ***
-##Event Loop
+**Event Loop**
 ***
-##ES6 模块循环加载
+**ES6 模块循环加载**
 ***
-##文件上传
+**文件上传**
 ***
-##断点下载
+**断点下载**
 ***
-##图片 2张
+**图片 2张**
 ***
-##cookie（怎么跨域）
+**cookie（怎么跨域）**
 ***
