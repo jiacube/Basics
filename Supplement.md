@@ -104,66 +104,69 @@ console.log(eval(s2.valueOf())); // logs the number 4
 ```python
 `hello world` `hello! world!` `hello ${who}` escape `<a>${who}</a>`
 ```
-#String 对象方法
-|方法|	描述|
-| --------   | -----:  | 
-|anchor()|	创建 HTML 锚。|
-|big()|	用大号字体显示字符串。|
-|blink()|	显示闪动字符串。|
-|bold()|	使用粗体显示字符串。|
-|charAt()|	返回在指定位置的字符。|
-|charCodeAt()|	返回在指定的位置的字符的 Unicode 编码。|
-|concat()|	连接字符串。|
-|fixed()	|以打字机文本显示字符串。|
-|fontcolor()	|使用指定的颜色来显示字符串。|
-|fontsize()	|使用指定的尺寸来显示字符串。|
-|fromCharCode()|	从字符编码创建一个字符串。|
-|indexOf()	|检索字符串。|
-|italics()	|使用斜体显示字符串。|
-|lastIndexOf()|	从后向前搜索字符串。|
-|link()	|将字符串显示为链接。|
-|localeCompare()|	用本地特定的顺序来比较两个字符串。|
-|match()|	找到一个或多个正则表达式的匹配。|
-|replace()|	替换与正则表达式匹配的子串。|
-|search()|	检索与正则表达式相匹配的值。|
-|slice()|	提取字符串的片断，并在新的字符串中返回被提取的部分。|
-|small()|	使用小字号来显示字符串。|
-|split()|	把字符串分割为字符串数组。|
-|strike()|	使用删除线来显示字符串。|
-|sub()|	把字符串显示为下标。|
-|substr()|	从起始索引号提取字符串中指定数目的字符。|
-|substring()|	提取字符串中两个指定的索引号之间的字符。|
-|sup()	|把字符串显示为上标。|
-|toLocaleLowerCase()|	把字符串转换为小写。|
-|toLocaleUpperCase()	|把字符串转换为大写。|
-|toLowerCase()|	把字符串转换为小写。|
-|toUpperCase()|	把字符串转换为大写。|
-|toSource()|	代表对象的源代码。|
-|toString()	|返回字符串。|
-|valueOf()|	返回某个字符串对象的原始值。|
-#转义字符
-| Code | Output|
-| --------   | -----:  | 
-|\0	|空字符|
-|\'	|单引号|
-|\"	|双引号|
-|\\	|反斜杠|
-|\n	|换行|
-|\r	|回车|
-|\v	|垂直制表符|
-|\t	|水平制表符|
-|\b	|退格|
-|\f	|换页|
-|\uXXXX	|unicode 码|
-|\u{X}| ... |
-|\u{XXXXXX}|	unicode codepoint |
-|\xXX	|Latin-1 字符(x小写)|
+String 对象方法
+<table>
+	<tr><td>方法</td>	<td>描述</td></tr>
+<tr><td>anchor()</td>	<td>创建 HTML 锚。</td></tr>
+<tr><td>big()</td>	<td>	用大号字体显示字符串。</td></tr>
+<tr><td>blink()</td>	<td>	显示闪动字符串。</td></tr>
+<tr><td>bold()</td>	<td>	使用粗体显示字符串。</td></tr>
+<tr><td>charAt()</td>	<td>	返回在指定位置的字符。</td></tr>
+<tr><td>charCodeAt()</td>	<td>	返回在指定的位置的字符的 Unicode 编码。</td></tr>
+<tr><td>concat()</td>	<td>	连接字符串。</td></tr>
+<tr><td>fixed()	</td>	<td>以打字机文本显示字符串。</td></tr>
+<tr><td>fontcolor()	</td>	<td>使用指定的颜色来显示字符串。</td></tr>
+<tr><td>fontsize()	</td>	<td>使用指定的尺寸来显示字符串。</td></tr>
+<tr><td>fromCharCode()</td>	<td>	从字符编码创建一个字符串。</td></tr>
+<tr><td>indexOf()	</td>	<td>检索字符串。</td></tr>
+<tr><td>italics()	</td>	<td>使用斜体显示字符串。</td></tr>
+<tr><td>lastIndexOf()</td>	<td>从后向前搜索字符串。</td></tr>
+<tr><td>link()	</td>	<td>将字符串显示为链接。</td></tr>
+<tr><td>localeCompare()</td>	<td>	用本地特定的顺序来比较两个字符串。</td></tr>
+<tr><td>match(</td>	<td>	找到一个或多个正则表达式的匹配。</td></tr>
+<tr><td>replace()</td>	<td>	替换与正则表达式匹配的子串。</td></tr>
+<tr><td>search()</td>	<td>	检索与正则表达式相匹配的值。</td></tr>
+<tr><td>slice()</td>	<td>	提取字符串的片断，并在新的字符串中返回被提取的部分。</td></tr>
+<tr><td>small()</td>	<td>	使用小字号来显示字符串。</td></tr>
+<tr><td>split()</td>	<td>	把字符串分割为字符串数组。</td></tr>
+<tr><td>strike()</td>	<td>	使用删除线来显示字符串。</td></tr>
+<tr><td>sub()</td>	<td>	把字符串显示为下标。</td></tr>
+<tr><td>substr()</td>	<td>	从起始索引号提取字符串中指定数目的字符。</td></tr>
+<tr><td>substring()</td>	<td>	提取字符串中两个指定的索引号之间的字符。</td></tr>
+<tr><td>sup()	</td>	<td>把字符串显示为上标。</td></tr>
+<tr><td>toLocaleLowerCase()</td>	<td>	把字符串转换为小写。</td></tr>
+<tr><td>toLocaleUpperCase()	</td>	<td>把字符串转换为大写。</td></tr>
+<tr><td>toLowerCase()</td>	<td>	把字符串转换为小写。</td></tr>
+<tr><td>toUpperCase()</td>	<td>	把字符串转换为大写。</td></tr>
+<tr><td>toSource()</td>	<td>	代表对象的源代码。</td></tr>
+<tr><td>toString()	</td>	<td>返回字符串。</td></tr>
+<tr><td>valueOf()</td>	<td>	返回某个字符串对象的原始值。</td></tr>
+	</table>
+转义字符
+	<table>
+<tr><td> Code </td>	<td> Output</td></tr>
+<tr><td> --------   </td>	<td>-----: </td></tr>
+<tr><td>\0	</td>	<td>空字符</td></tr>
+<tr><td>\'	</td>	<td>单引号</td></tr>
+<tr><td>\"	</td>	<td>双引号</td></tr>
+<tr><td>\\	</td>	<td>反斜杠</td></tr>
+<tr><td>\n	</td>	<td>换行</td></tr>
+<tr><td>\r	</td>	<td>回车</td></tr>
+<tr><td>\v	</td>	<td>垂直制表符</td></tr>
+<tr><td>\t	</td>	<td>水平制表符</td></tr>
+<tr><td>\b	</td>	<td>退格</td></tr>
+<tr><td>\f	</td>	<td>换页</td></tr>
+<tr><td>\uXXXX	</td>	<td>unicode 码</td></tr>
+<tr><td>\u{X}</td>	<td> ... </td></tr>
+<tr><td>\u{XXXXXX}</td>	<td>	unicode codepoint </td></tr>
+<tr><td>\xXX	</td>	<td>Latin-1 字符(x小写)</td></tr>
+	</table>
 
 参考链接：
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String
 
 ***
-##正则
+正则
 **RegExp** 构造函数创建了一个正则表达式对象，用于将文本与一个模式匹配。
 创建 RegExp 对象的语法：
 ```python
@@ -188,19 +191,30 @@ RegExp(pattern [, flags]);
 ***/
 ```
 ***
-##Promise 
-1. 原理 
+Promise 
 
+参考链接：
+http://es6.ruanyifeng.com/#docs/promise
+
+1. 原理 
+   Promise 对象用于延迟(deferred) 计算和异步(asynchronous )计算.一个Promise对象代表着一个还未完成，但预期将来会完成的操作。Promise 对象是一个返回值的代理，这个返回值在promise对象创建时未必已知。它允许你为异步操作的成功或失败指定处理方法。 这使得异步方法可以像同步方法那样返回值：异步方法会返回一个包含了原返回值的 promise 对象来替代原返回值。
+   
+  ** Promise 对象用来进行延迟( deferred )和异步( asynchronous )计算。一个 Promise 处于以下四种状态之一: 
+- pending: 还没有得到肯定或者失败结果，进行中 
+- fulfilled: 成功的操作 
+- rejected: 失败的操作 
+- settled: 已被 fulfilled 或 rejected
+   **
 2. 实现 
 
 ***
-##MVVM框架-React、Vue、Angular
+MVVM框架-React、Vue、Angular
 1. 组件通信
 2. vue-router组件   
 3. axios   
 4. template编译
 
-###angular自带的工具类函数
+angular自带的工具类函数
 
    >转换
 |API|	描述|
