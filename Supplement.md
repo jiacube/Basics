@@ -227,21 +227,20 @@ http://es6.ruanyifeng.com/#docs/promise
 **MVVM框架-React、Vue、Angular**
 
 1. 组件通信
-
--vue:http://www.php.cn/js-tutorial-386469.html
--React:*https://www.jianshu.com/p/fb915d9c99c4
--angular2+:https://blog.csdn.net/yaomengzhi/article/details/80277702
--angualr1:https://www.cnblogs.com/myzhibie/p/5745018.html
+- vue:http://www.php.cn/js-tutorial-386469.html
+- React:https://www.jianshu.com/p/fb915d9c99c4
+- angular2+:https://blog.csdn.net/yaomengzhi/article/details/80277702
+- angualr1:https://www.cnblogs.com/myzhibie/p/5745018.html
 
 2. vue-router组件 
 
--官方文档：https://router.vuejs.org/zh/guide/
--参考：https://www.cnblogs.com/SamWeb/p/6610733.html
+- 官方文档：https://router.vuejs.org/zh/guide/
+- 参考：https://www.cnblogs.com/SamWeb/p/6610733.html
 
 3. axios  
 
--参考（中文）：https://www.kancloud.cn/yunye/axios/234845
--参考（英文）：https://www.npmjs.com/package/axios
+- 参考（中文）：https://www.kancloud.cn/yunye/axios/234845
+- 参考（英文）：https://www.npmjs.com/package/axios
 
 4. template编译
 
