@@ -87,7 +87,7 @@ var s_obj = new String(s_prim);
 console.log(typeof s_prim); // Logs "string"
 console.log(typeof s_obj);  // Logs "object"
 ```
-    当使用 eval时，基本字符串和字符串对象也会产生不同的结果。eval 会将基本字符串作为源代码处理; 而字符串对象则被看作对象处理, 返回对象。 例如：
+**当使用 eval时，基本字符串和字符串对象也会产生不同的结果。eval 会将基本字符串作为源代码处理; 而字符串对象则被看作对象处理, 返回对象。 例如：**
 ```python
 s1 = "2 + 2";               // creates a string primitive
 s2 = new String("2 + 2");   // creates a String object
