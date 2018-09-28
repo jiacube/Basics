@@ -1,6 +1,6 @@
-日期
+###日期
 
-日期常规操作
+**日期常规操作
 
 ```python
 var myDate = new Date();            //获取当前日期时间
@@ -57,7 +57,6 @@ Date.prototype.WeekNumOfYear    //判断日期所在年的第几周
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 
 ***
-
 **字符串 **
 
 概念：**String** 全局对象是一个用于字符串或一个字符序列的构造函数。字符串用''或""括起来的字符表示。
@@ -205,7 +204,7 @@ RegExp(pattern [, flags]);
 ```
 ***
 
-**Promise **
+**Promise**
 
 参考链接：
 http://es6.ruanyifeng.com/#docs/promise
@@ -215,6 +214,7 @@ http://es6.ruanyifeng.com/#docs/promise
    Promise 对象用于延迟(deferred) 计算和异步(asynchronous )计算.一个Promise对象代表着一个还未完成，但预期将来会完成的操作。Promise 对象是一个返回值的代理，这个返回值在promise对象创建时未必已知。它允许你为异步操作的成功或失败指定处理方法。 这使得异步方法可以像同步方法那样返回值：异步方法会返回一个包含了原返回值的 promise 对象来替代原返回值。
    
  Promise 对象用来进行延迟( deferred )和异步( asynchronous )计算。一个 Promise 处于以下四种状态之一: 
+ 
 - pending: 还没有得到肯定或者失败结果，进行中 
 - fulfilled: 成功的操作 
 - rejected: 失败的操作 
@@ -227,6 +227,7 @@ http://es6.ruanyifeng.com/#docs/promise
 **MVVM框架-React、Vue、Angular**
 
 1. 组件通信
+
 - vue: http://www.php.cn/js-tutorial-386469.html
 - React: https://www.jianshu.com/p/fb915d9c99c4
 - angular2+: https://blog.csdn.net/yaomengzhi/article/details/80277702
@@ -293,25 +294,38 @@ http://es6.ruanyifeng.com/#docs/promise
 **继承**
 
 1. 继承链
+
 2. 实现封装、继承、多态等面向对象的基本功能
+
 3. 使用prototype、function、new、this模拟面向对象的类
-https://m.jb51.net/article/107012.html
+
+[参考链接：https://m.jb51.net/article/107012.html]
 
 ***
 
 **数据结构**
+
 - 栈：一种遵从先进后出 (LIFO) 原则的有序集合；新添加的或待删除的元素都保存在栈的末尾，称作栈顶，另一端为栈底。在栈里，新元素都靠近栈顶，旧元素都接近栈底。
+
 - 队列：与上相反，一种遵循先进先出 (FIFO / First In First Out) 原则的一组有序的项；队列在尾部添加新元素，并从头部移除元素。最新添加的元素必须排在队列的末尾。
+
 - 链表：存储有序的元素集合，但不同于数组，链表中的元素在内存中并不是连续放置的；每个元素由一个存储元素本身的节点和一个指向下一个元素的引用（指针/链接）组成。
+
 - 集合：由一组无序且唯一（即不能重复）的项组成；这个数据结构使用了与有限集合相同的数学概念，但应用在计算机科学的数据结构中。
+
 - 字典：以 [键，值] 对为数据形态的数据结构，其中键名用来查询特定元素，类似于 Javascript 中的Object。
+
 - 散列：根据关键码值（Key value）直接进行访问的数据结构；它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度；这个映射函数叫做散列函数，存放记录的数组叫做散列表。
+
 - 树：由 n（n>=1）个有限节点组成一个具有层次关系的集合；把它叫做“树”是因为它看起来像一棵倒挂的树，也就是说它是根朝上，而叶朝下的，基本呈一对多关系，树也可以看做是图的特殊形式。
+
 - 图：图是网络结构的抽象模型；图是一组由边连接的节点（顶点）；任何二元关系都可以用图来表示，常见的比如：道路图、关系图，呈多对多关系。
+
 [作者：Surmon，链接：https://juejin.im/post/594dfe795188250d725a220a，来源：掘金]
 ***
 
 **性能优化**
+
 - 减少 HTTP请求数：合理设置 HTTP缓存，资源合并与压缩，CSS Sprites，Inline Images，Lazy Load Images；
 - 将 CSS放在头部（head中）；
 - 将外部脚本置底；
@@ -325,6 +339,7 @@ https://m.jb51.net/article/107012.html
 ***
 
 **兼容**
+
 - 引入html5shiv解决浏览器兼容问题：
 ```python
  <!--[if lt IE 9]>
@@ -332,6 +347,7 @@ https://m.jb51.net/article/107012.html
  <![endif]-->
  ```
  - cssHacks: 
+ 
  	1)条件注释法;
 	
 	只在IE下生效
@@ -366,27 +382,43 @@ https://m.jb51.net/article/107012.html
 ***
 
 **自适应**
+
 	- 屏幕适配
+	
 	<!-- 视口 -->
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 	详解：width=device-width 把布局视口设置成为浏览器（屏幕）的宽度;
+	
 	     initial-scale=1 初始缩放的比例是1，使用它的时候，同时也会将布局视口的尺寸设置为缩放后的尺寸。
+	     
 	- 响应式布局
+	
 	什么是响应式？同一个页面在不同屏幕尺寸下有不同的布局。
+	
 	响应式设计方案：
-		CSS3 Media Query（推荐）：媒体查询，兼容到IE9+，但可以通过插件兼容IE6-8（利用@media规则为主要手段），如respond.js和css3-mediaqueries-js；
-		Flex：弹性布局，兼容性较差（IE10+）
-		Grid：网格布局，兼容性更差
-		Columns：栅格系统，往往需要依赖于某个UI库，如bootstrap
+	
+		1)CSS3 Media Query（推荐）：媒体查询，兼容到IE9+，但可以通过插件兼容IE6-8（利用@media规则为主要手段），如respond.js和css3-mediaqueries-js；
+		
+		2)Flex：弹性布局，兼容性较差（IE10+）
+		
+		3)Grid：网格布局，兼容性更差
+		
+		4)Columns：栅格系统，往往需要依赖于某个UI库，如bootstrap
+		
 		【响应式开发避免杂合使用rem】
 
-响应式和自适应的区别：	
+响应式和自适应的区别：
+
 	响应式针对的是不同分辨率设备而进行的适配式设计，以利用@media规则为主要手段，而自适应则忽略@media以比例布局为主，目的是适应不同的浏览器窗口大小。
 	
 ***
 
 **rem**
+
 px、em、rem之间的关系：
+
 - px：像素是相对于显示器屏幕分辨率而言的相对长度单位。pc端使用px倒也无所谓，可是在移动端，因为手机分辨率种类颇多，不可能一个个去适配，这时px就显得非常无力，所以就要考虑em和rem。
 - em：是相对长度单位，相对于当前对象内文本的字体尺寸，即em的计算是基于父级元素font-size的。假设html的font-size默认为16px，body字体大小定义为50%，那么在body里字体大小就是1em=8px了。可当你又定义了一个div，然后把字体设置成了50%，请问，现在div下的1em等于多少？因为继承了父级的值，现在这个div里的1em=4px...
 - rem：是em的升级版，rem是相对于html根元素的(在body标签里面设置字体大小不起作用)，不会受到父级的影响，这样的好处在于：从em里的例子来讲，1rem始终会等于8px。使用的时候不需要重新计算rem此时的大小。rem因为是css3增加的，所以ie8或以下请无视。（浏览器默认的字体大小都是16px）
@@ -397,6 +429,7 @@ px、em、rem之间的关系：
 **拖拽的实现**
 
 参考：https://juejin.im/entry/59eebc39f265da431c6f7bdb；
+
       https://juejin.im/post/5a667e286fb9a01c982cb474
 
 	
@@ -405,43 +438,49 @@ px、em、rem之间的关系：
 **原生JS封装成组件**
 
 >参考链接：
+
 1）封装组件tooltip：https://blog.csdn.net/mobingxiche/article/details/70172952
+
 2）封装轮播图组件：https://www.cnblogs.com/iceman919/p/6192684.html
+
 3）封装hash路由组件：http://www.dengzhr.com/js/1241
+
 4）实现手势解锁组件：https://www.h5jun.com/post/handlock-comp.html
+
 ***
 
 **CSS3属性**
-- Border-radius（CSS圆角）：
 
+- Border-radius（CSS圆角）：
+```python
 -webkit-border-radius: 4px;
 -moz-border-radius: 4px;
 border-radius: 4px;
-
+```
 - Box-shadow（合阴影）：
-
+```python
 box-shadow：x轴偏移 y轴偏移 模糊值 阴影颜色；
 
 -webkit-box-shadow: 1px 1px 3px #292929;
 -moz-box-shadow: 1px 1px 3px #292929;
 box-shadow: 1px 1px 3px #292929;
-
+```
 - Text-shadow（文字阴影）：
-
+```python
 text-shadow：水平位移 垂直位移 模糊值 阴影颜色；
-
+```
 - text-overflow（文本溢出）： clip / ellipsis
 
 - flex（弹性布局）：
-
+```python
     display: -moz-box;
     display: -webkit-box;
     display: box;
-
+```
 - Transition（动画）：
-
+```python
  transition: 转换属性 持续时间 缓动类型;
- 
+ ```
  ...
 
 ***
@@ -449,11 +488,17 @@ text-shadow：水平位移 垂直位移 模糊值 阴影颜色；
 **Ajax**
 
 AJAX = Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）。通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
+
 - XMLHttpRequest  AJAX核心对象，用于在后台与服务器交换数据。
+
 	创建对象：
-	let xmlhttp=new XMLHttpRequest();   
+	
+	let xmlhttp=new XMLHttpRequest();  
+	
 	//new ActiveXObject("Microsoft.XMLHTTP"); 老版本的 Internet Explorer （IE5 和 IE6）使用 ActiveX 对象
+	
 检查兼容性：
+
 ```python
 var xmlhttp;
 if (window.XMLHttpRequest)
@@ -466,12 +511,15 @@ else
   }
 ```
 - 向服务器发送请求:
-
+```python
 xmlhttp.open(method,url,async);  //method：请求的类型；GET 或 POST   url：文件在服务器上的位置    async：true（异步）或 false（同步）
 xmlhttp.setRequestHeader(header,value); //POST 数据时使用 setRequestHeader() 来添加 HTTP 头
 xmlhttp.send(string);  //string：仅用于 POST 请求
+```
 - onreadystatechange 事件：
+
 readyState 属性存有 XMLHttpRequest 的状态信息。readyState 改变时，就会触发 onreadystatechange 事件：
+
 readystate:
 - 0: 请求未初始化
 - 1: 服务器连接已建立
@@ -479,7 +527,7 @@ readystate:
 - 3: 请求处理中
 - 4: 请求已完成，且响应已就绪
 
-``python
+```python
 //onreadystatechange 事件被触发 5 次（0 - 4），对应着 readyState 的每个变化。
 xmlhttp.onreadystatechange=function()
   {
@@ -496,9 +544,13 @@ xmlhttp.send();
 
 解析：
 
-1)document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-
-2)xmlDoc=xmlhttp.responseXML;
+1)
+```python
+document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+```
+2)
+```python
+xmlDoc=xmlhttp.responseXML;
 txt="";
 x=xmlDoc.getElementsByTagName("ARTIST");
 for (i=0;i<x.length;i++)
@@ -506,30 +558,44 @@ for (i=0;i<x.length;i++)
   txt=txt + x[i].childNodes[0].nodeValue + "<br />";
   }
 document.getElementById("myDiv").innerHTML=txt;
-
+```
 ***
 
 **Event Loop**
+
 JavaScript 是单线程的，浏览器是多进程的。于是，JavaScript 的任务可以分为同步任务和异步任务。
+
  Event Loop 机制：
+ 
  1)所有同步任务都在主线程上执行，形成一个执行栈
+ 
  2)主线程之外，事件触发线程管理着一个任务队列，只要异步任务有了运行结果，就在任务队列之中放置一个事件。
+ 
  3)一旦执行栈中的所有同步任务执行完毕（此时JS引擎空闲），系统就会读取任务队列，将可运行的异步任务添加到执行栈中，开始执行。
 
 ***
 
 **ES6 模块循环加载**
+
 "循环加载"（circular dependency）指的是，a脚本的执行依赖b脚本，而b脚本的执行又依赖a脚本，存在强耦合。
+
 ES6模块的运行机制与CommonJS不一样，它遇到模块加载命令import时，不会去执行模块，而是只生成一个引用。等到真的需要用到时，再到模块里面去取值。因此，ES6模块是动态引用，不存在缓存值的问题，而且模块里面的变量，绑定其所在的模块。
+
 [引用来源：http://www.ruanyifeng.com/blog/2015/11/circular-dependency.html]
 ***
 
 **文件上传**
+
 上传插件：Web Uploader、JSAjaxFIleUploader、jQuery-File-Upload。
+
 通常上传控件向下兼容的方案通常是高版本浏览器采用ajax方式，低版本浏览器采用iframe+form表单形式。
+
 - iframe封装form表单上传：
+
 form表单属性中action属性规定后端处理文件上传的路径；method属性规定上传文件的方法post or get；enctype属性规定在发送到服务器之前应该如何对表单数据进行编码，在使用包含文件上传控件的表单时必须使用“multipart/form-data”。但是上传同步、上传完成页面会刷新，实现文件异步上传，只能通过iframe+form。
+
 iframe+form实现原理：
+
 文件上传时在页面中动态创建一个iframe元素和一个form元素，并将form元素的target属性指向动态创建iframe元素。当用户完成选择文件动作时，提交子页面中的 form。这时，iframe跳转，而父页面没有刷新。这使得上传结束后，服务器处理结果返回到动态iframe窗口而没有刷新页面
 
 [引用链接：https://www.jianshu.com/p/374e9b9d1fb1]
@@ -537,14 +603,19 @@ iframe+form实现原理：
 ***
 
 **断点续传**
+
 参考链接：http://www.voidcn.com/article/p-fbegqwtv-pu.html；
+
          http://www.cnblogs.com/zhaopei/p/download.html#autoid-2-2
 
 ***
 
 **响应式图片**
+
 响应式图片的几种解决方案：
+
 - 创建一个新的（HTML）元素:
+
 	提议创建一个新的picture元素（类似HMTL5中的video这样的元素），该元素中包含其他的图片源，示例代码如下：
 ```python
 //在特定媒体查询（media queries）条件下显示的图片
@@ -555,7 +626,9 @@ iframe+form实现原理：
 	</picture>
 ```
 - 创建新的图像格式
+
 - 使用特定技术手段
+
 目前来说前两种只是提议，未做标准，只能通过特定的技术手段实现图片的响应式.
 
 如：
@@ -573,6 +646,7 @@ iframe+form实现原理：
 ***
 
 **cookie（怎么跨域）**
+
 - 网页端中，对于跨域的 XMLHttpRequest 请求，需要设置withCredentials 属性为 true；
 - 服务端的响应中必须携带 Access-Control-Allow-Credentials: true 首部；
 - 如果 XMLHttpRequest 请求设置了withCredentials 属性，那么服务器不得设置 Access-Control-Allow-Origin的值为* ，否则浏览器将会抛出The value of the 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*' 错误。
