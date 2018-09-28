@@ -414,10 +414,100 @@ px、em、rem之间的关系：
 ***
 
 **CSS3属性**
+- Border-radius（CSS圆角）：
+
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+
+- Box-shadow（合阴影）：
+
+box-shadow：x轴偏移 y轴偏移 模糊值 阴影颜色；
+
+-webkit-box-shadow: 1px 1px 3px #292929;
+-moz-box-shadow: 1px 1px 3px #292929;
+box-shadow: 1px 1px 3px #292929;
+
+- Text-shadow（文字阴影）：
+
+text-shadow：水平位移 垂直位移 模糊值 阴影颜色；
+
+- text-overflow（文本溢出）： clip / ellipsis
+
+- flex（弹性布局）：
+
+    display: -moz-box;
+    display: -webkit-box;
+    display: box;
+
+- Transition（动画）：
+
+ transition: 转换属性 持续时间 缓动类型;
+ 
+ ...
 
 ***
 
 **Ajax**
+
+AJAX = Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）。通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
+- XMLHttpRequest  AJAX核心对象，用于在后台与服务器交换数据。
+	创建对象：
+	let xmlhttp=new XMLHttpRequest();   
+	//new ActiveXObject("Microsoft.XMLHTTP"); 老版本的 Internet Explorer （IE5 和 IE6）使用 ActiveX 对象
+检查兼容性：
+```python
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+```
+- 向服务器发送请求:
+
+xmlhttp.open(method,url,async);  //method：请求的类型；GET 或 POST   url：文件在服务器上的位置    async：true（异步）或 false（同步）
+xmlhttp.setRequestHeader(header,value); //POST 数据时使用 setRequestHeader() 来添加 HTTP 头
+xmlhttp.send(string);  //string：仅用于 POST 请求
+- onreadystatechange 事件：
+readyState 属性存有 XMLHttpRequest 的状态信息。readyState 改变时，就会触发 onreadystatechange 事件：
+readystate:
+- 0: 请求未初始化
+- 1: 服务器连接已建立
+- 2: 请求已接收
+- 3: 请求处理中
+- 4: 请求已完成，且响应已就绪
+
+``python
+//onreadystatechange 事件被触发 5 次（0 - 4），对应着 readyState 的每个变化。
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)  //当 readyState 等于 4 且状态为 200 时，表示响应已就绪
+    {
+    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","test1.txt",true);
+xmlhttp.send();
+```
+
+- 服务器响应（responseText-获得字符串形式的响应数据 / responseXML-获得 XML 形式的响应数据）：
+
+解析：
+
+1)document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+
+2)xmlDoc=xmlhttp.responseXML;
+txt="";
+x=xmlDoc.getElementsByTagName("ARTIST");
+for (i=0;i<x.length;i++)
+  {
+  txt=txt + x[i].childNodes[0].nodeValue + "<br />";
+  }
+document.getElementById("myDiv").innerHTML=txt;
 
 ***
 
@@ -448,14 +538,47 @@ iframe+form实现原理：
 
 ***
 
-**断点下载**
+**断点续传**
+参考链接：http://www.voidcn.com/article/p-fbegqwtv-pu.html；
+         http://www.cnblogs.com/zhaopei/p/download.html#autoid-2-2
 
 ***
 
-**图片 2张**
+**响应式图片**
+响应式图片的几种解决方案：
+- 创建一个新的（HTML）元素:
+	提议创建一个新的picture元素（类似HMTL5中的video这样的元素），该元素中包含其他的图片源，示例代码如下：
+```python
+//在特定媒体查询（media queries）条件下显示的图片
+	<picture alt="image description">
+  		<source src="/path/to/medium-image.png" media="(min-width: 600px)">
+  		<source src="/path/to/large-image.png" media="(min-width: 800px)">
+  		<img src="/path/to/mobile-image.png" alt="image description">
+	</picture>
+```
+- 创建新的图像格式
+- 使用特定技术手段
+目前来说前两种只是提议，未做标准，只能通过特定的技术手段实现图片的响应式.
+
+如：
+- Markup — 默认是用img元素标签
+- Javascript — 决定viewport的尺寸，将存储在cookie中的相关信息传给服务器，而后再改变img标签的src属性。
+- Server — 获取初始图片请求，读取cookie，如果不是移动终端设备则返回1x1大小的空白占位图。然后等待JS脚本将真正的图片填充进去。
+
+再如通过 srcset + size 属性以及 w 标识符，除了IE/Edge之外，Chrome 38+、Firefox 38+、Safari 9+、Opera 30+、Android 5.0+、iOS 9+ 都支持（兼容性一般）。（来源：https://www.zhihu.com/question/23346183/answer/59558891）
+```python
+<img src="800px.png" srcset="400px.png 400w, 800px.png 800w, 1600px.png 1600w, 2400px.png 2400w, 3200px.png 3200w" sizes="80vw">
+```
+
+[参考链接:http://caibaojian.com/3-solutions-for-responsive-image.html]
 
 ***
 
 **cookie（怎么跨域）**
+- 网页端中，对于跨域的 XMLHttpRequest 请求，需要设置withCredentials 属性为 true；
+- 服务端的响应中必须携带 Access-Control-Allow-Credentials: true 首部；
+- 如果 XMLHttpRequest 请求设置了withCredentials 属性，那么服务器不得设置 Access-Control-Allow-Origin的值为* ，否则浏览器将会抛出The value of the 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*' 错误。
+
+参考链接：https://www.jianshu.com/p/13d53acc124f
 
 ***
