@@ -173,3 +173,110 @@ ETag/If-None-Match
 Last-Modified与ETag优先验证Tag
 
 ![缓存](images/cache.png)
+
+### Ajax
+
+````
+var xhr = new XMLHttpRequest();
+xhr.open('GET', url);
+xhr.onreadystatechange = function(){
+    if (xhr.readyState === 4 && xhr.status === 200){
+        console.log(xhr.responseText);
+    }
+}
+xhr.send();
+````
+
+#### readystate
+
+0: (未初始化)未调用open方法
+
+1: (载入)已调用send方法，正在发送请求
+
+2: (载入完成)send完成
+
+3: (解析)正在解析响应内容
+
+4: (完成)响应内容解析完成
+
+### Web端即时通讯
+
+#### 传统Ajax短轮询
+
+#### Comet技术
+
+##### 长轮询
+
+长轮询是在打开一条连接以后保持，等待服务器推送来数据再关闭的方式。
+
+##### iframe流
+
+iframe流方式是在页面中插入一个隐藏的iframe，利用其src属性在服务器和客户端之间创建一条长链接，服务器向iframe传输数据，来实时更新页面。
+
+#### WebSocket
+
+WebSocket协议本质上是一个基于TCP的协议，在单个TCP连接上进行全双工通讯。
+
+为了建立一个WebSocket连接，客户端浏览器首先要向服务器发起HTTP请求，这个请求和通常的HTTP请求不同，包含了一些附加头信息，其中附加头信息"Upgrade: WebSocket"表明这是一个申请协议升级的HTTP请求，服务器端解析这些附加的头信息然后产生应答信息返回给客户端，客户端和服务器段的WebSocket连接就建立起来了，双方就可以通过这个连接通道自由地传递信息，并且这个连接会持续存在直到客户端或者服务器端的某一方主动地关闭连接。
+
+* WebSocket属性
+
+只读属性readyState表示连接状态
+
+0: 表示连接尚未建立。
+
+1: 表示连接已建立，可以进行通信。
+
+2: 表示连接正在进行关闭。
+
+3: 表示连接已经关闭或者连接不能打开。
+
+只读属性bufferedAmount已被send()放入正在队列中等待传输，但是还没有发出的UTF-8文本字节数。
+
+````
+function testWebSocket() {
+    if ('WebSocket' in window) {
+        //创建WebSocket对象
+        var ws = new WebSocket(url, [protocol]);
+        
+        //连接建立时触发
+        ws.open = function() {
+            //使用连接发送数据
+            ws.send();
+        }
+
+        //客户端接收服务端数据时触发
+        ws.onmessage = function(evt) {
+            console.log('接收的数据', evt.data);
+        }
+
+        //通信发生错误时触发
+        ws.error = function() {
+            //关闭连接
+            ws.close();
+        }
+
+        //连接关闭时触发
+        ws.close = function() {
+
+        }
+    } else {
+        console.log('Brower cann't support WebSockt.');
+    }
+}
+````
+
+#### SSE(Server-sent Events)
+
+### HTTPS
+
+基于SSL的HTTP协议，提供**身份验证**和**加密通信**方法。
+
+#### 与HTTP的区别
+
+* https需要申请证书
+
+* http是明文传输;https是加密传输
+
+* http连接简单，无状态;https是ssl+http协议构建的可进行加密传输、身份认证的网络协议
+

@@ -1,6 +1,7 @@
 日期
 
 日期常规操作
+
 ```python
 var myDate = new Date();            //获取当前日期时间
 
@@ -31,7 +32,8 @@ var mytime=myDate.toLocaleTimeString();     //获取当前时间
 myDate.toLocaleString( );        //获取日期与时间
 ```
 
-日期时间脚本库方法列表
+###日期时间脚本库方法列表
+
 ```python
 Date.prototype.isLeapYear       // 判断闰年
 
@@ -55,7 +57,6 @@ Date.prototype.WeekNumOfYear    //判断日期所在年的第几周
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 
 ***
-
 
 **字符串 **
 
@@ -91,6 +92,7 @@ console.log(typeof s_prim); // Logs "string"
 console.log(typeof s_obj);  // Logs "object"
 ```
 **当使用 eval时，基本字符串和字符串对象也会产生不同的结果。eval 会将基本字符串作为源代码处理; 而字符串对象则被看作对象处理, 返回对象。 例如：**
+
 ```python
 s1 = "2 + 2";               // creates a string primitive
 s2 = new String("2 + 2");   // creates a String object
@@ -203,9 +205,7 @@ RegExp(pattern [, flags]);
 ```
 ***
 
-
 **Promise **
-
 
 参考链接：
 http://es6.ruanyifeng.com/#docs/promise
@@ -245,7 +245,6 @@ http://es6.ruanyifeng.com/#docs/promise
 4. template编译
 
 ***
-
 
 **angular自带的工具类函数**
 
@@ -287,7 +286,6 @@ http://es6.ruanyifeng.com/#docs/promise
 ***
 
 **打包工具-webpack、grunt、gulp**
-
     1. webpack
     2. grunt
     3. gulp
@@ -580,5 +578,3 @@ iframe+form实现原理：
 - 如果 XMLHttpRequest 请求设置了withCredentials 属性，那么服务器不得设置 Access-Control-Allow-Origin的值为* ，否则浏览器将会抛出The value of the 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*' 错误。
 
 参考链接：https://www.jianshu.com/p/13d53acc124f
-
-***
