@@ -1,6 +1,6 @@
-###日期
+##日期
 
-**日期常规操作
+**日期常规操作**
 
 ```python
 var myDate = new Date();            //获取当前日期时间
@@ -32,7 +32,7 @@ var mytime=myDate.toLocaleTimeString();     //获取当前时间
 myDate.toLocaleString( );        //获取日期与时间
 ```
 
-###日期时间脚本库方法列表
+##日期时间脚本库方法列表
 
 ```python
 Date.prototype.isLeapYear       // 判断闰年
@@ -57,7 +57,7 @@ Date.prototype.WeekNumOfYear    //判断日期所在年的第几周
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 
 ***
-**字符串 **
+**字符串**
 
 概念：**String** 全局对象是一个用于字符串或一个字符序列的构造函数。字符串用''或""括起来的字符表示。
 用 String 函数将其他值生成或转换成字符串：
