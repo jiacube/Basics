@@ -1,4 +1,4 @@
-####日期
+## 日期
 
 **日期常规操作**
 
@@ -32,7 +32,7 @@ var mytime=myDate.toLocaleTimeString();     //获取当前时间
 myDate.toLocaleString( );        //获取日期与时间
 ```
 
-#日期时间脚本库方法列表
+**日期时间脚本库方法列表**
 
 ```python
 Date.prototype.isLeapYear       // 判断闰年
@@ -57,7 +57,7 @@ Date.prototype.WeekNumOfYear    //判断日期所在年的第几周
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 
 ***
-**字符串**
+## 字符串
 
 概念：**String** 全局对象是一个用于字符串或一个字符序列的构造函数。字符串用''或""括起来的字符表示。
 用 String 函数将其他值生成或转换成字符串：
@@ -110,6 +110,7 @@ console.log(eval(s2.valueOf())); // logs the number 4
 ```python
 `hello world` `hello! world!` `hello ${who}` escape `<a>${who}</a>`
 ```
+## string
 
 **String 对象方法**
 
@@ -176,7 +177,7 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects
 
 ***
 
-**正则**
+## 正则
 
 **RegExp** 构造函数创建了一个正则表达式对象，用于将文本与一个模式匹配。
 
@@ -204,7 +205,7 @@ RegExp(pattern [, flags]);
 ```
 ***
 
-**Promise**
+## Promise
 
 参考链接：
 http://es6.ruanyifeng.com/#docs/promise
@@ -224,7 +225,7 @@ http://es6.ruanyifeng.com/#docs/promise
 
 ***
 
-**MVVM框架-React、Vue、Angular**
+## MVVM框架-React、Vue、Angular
 
 1. 组件通信
 
@@ -286,12 +287,15 @@ http://es6.ruanyifeng.com/#docs/promise
 
 ***
 
-**打包工具-webpack、grunt、gulp**
+## 打包工具-webpack、grunt、gulp
+
     1. webpack
+    
     2. grunt
+    
     3. gulp
 ***
-**继承**
+## 继承
 
 1. 继承链
 
@@ -303,7 +307,7 @@ http://es6.ruanyifeng.com/#docs/promise
 
 ***
 
-**数据结构**
+## 数据结构
 
 - 栈：一种遵从先进后出 (LIFO) 原则的有序集合；新添加的或待删除的元素都保存在栈的末尾，称作栈顶，另一端为栈底。在栈里，新元素都靠近栈顶，旧元素都接近栈底。
 
@@ -324,7 +328,7 @@ http://es6.ruanyifeng.com/#docs/promise
 [作者：Surmon，链接：https://juejin.im/post/594dfe795188250d725a220a，来源：掘金]
 ***
 
-**性能优化**
+## 性能优化
 
 - 减少 HTTP请求数：合理设置 HTTP缓存，资源合并与压缩，CSS Sprites，Inline Images，Lazy Load Images；
 - 将 CSS放在头部（head中）；
@@ -338,7 +342,7 @@ http://es6.ruanyifeng.com/#docs/promise
 - CSS：避免嵌套过深，Image压缩等
 ***
 
-**兼容**
+## 兼容
 
 - 引入html5shiv解决浏览器兼容问题：
 ```python
@@ -381,7 +385,7 @@ http://es6.ruanyifeng.com/#docs/promise
 
 ***
 
-**自适应**
+## 自适应
 
 	- 屏幕适配
 	
@@ -415,7 +419,7 @@ http://es6.ruanyifeng.com/#docs/promise
 	
 ***
 
-**rem**
+## rem
 
 px、em、rem之间的关系：
 
@@ -426,7 +430,7 @@ px、em、rem之间的关系：
 [引用来源：https://my.oschina.net/thinkive/blog/669942]
 ***
 
-**拖拽的实现**
+## 拖拽的实现
 
 参考：https://juejin.im/entry/59eebc39f265da431c6f7bdb；
 
@@ -435,7 +439,7 @@ px、em、rem之间的关系：
 	
 ***
 
-**原生JS封装成组件**
+## 原生JS封装成组件
 
 >参考链接：
 
@@ -449,7 +453,7 @@ px、em、rem之间的关系：
 
 ***
 
-**CSS3属性**
+## CSS3属性
 
 - Border-radius（CSS圆角）：
 ```python
@@ -485,7 +489,7 @@ text-shadow：水平位移 垂直位移 模糊值 阴影颜色；
 
 ***
 
-**Ajax**
+## Ajax
 
 AJAX = Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）。通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
 
@@ -561,7 +565,7 @@ document.getElementById("myDiv").innerHTML=txt;
 ```
 ***
 
-**Event Loop**
+## Event Loop
 
 JavaScript 是单线程的，浏览器是多进程的。于是，JavaScript 的任务可以分为同步任务和异步任务。
 
@@ -575,7 +579,7 @@ JavaScript 是单线程的，浏览器是多进程的。于是，JavaScript 的�
 
 ***
 
-**ES6 模块循环加载**
+## ES6 模块循环加载
 
 "循环加载"（circular dependency）指的是，a脚本的执行依赖b脚本，而b脚本的执行又依赖a脚本，存在强耦合。
 
@@ -584,7 +588,7 @@ ES6模块的运行机制与CommonJS不一样，它遇到模块加载命令import
 [引用来源：http://www.ruanyifeng.com/blog/2015/11/circular-dependency.html]
 ***
 
-**文件上传**
+## 文件上传
 
 上传插件：Web Uploader、JSAjaxFIleUploader、jQuery-File-Upload。
 
@@ -602,7 +606,7 @@ iframe+form实现原理：
 
 ***
 
-**断点续传**
+## 断点续传
 
 参考链接：http://www.voidcn.com/article/p-fbegqwtv-pu.html；
 
@@ -610,7 +614,7 @@ iframe+form实现原理：
 
 ***
 
-**响应式图片**
+## 响应式图片
 
 响应式图片的几种解决方案：
 
@@ -645,7 +649,9 @@ iframe+form实现原理：
 
 ***
 
-**cookie（怎么跨域）**
+## cookie（怎么跨域）
+
+CORS中的cookie跨域；
 
 - 网页端中，对于跨域的 XMLHttpRequest 请求，需要设置withCredentials 属性为 true；
 - 服务端的响应中必须携带 Access-Control-Allow-Credentials: true 首部；
