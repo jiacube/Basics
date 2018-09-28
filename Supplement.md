@@ -355,32 +355,43 @@ http://es6.ruanyifeng.com/#docs/promise
  	1)条件注释法;
 	
 	只在IE下生效
-	<!--[if IE]>
+	&lt;!--[if IE]>
 	这段文字只在IE浏览器显示
-	<![endif]-->
+	&lt;![endif]-->
 	
 	只在IE6下生效
-	<!--[if IE 6]>
+	&lt;!--[if IE 6]>
 	这段文字只在IE6浏览器显示
-	<![endif]-->
+	&lt;![endif]-->
 	
 	2)类内属性前缀法;
 	
 	“-″减号是IE6专有的hack
+	
 	“\9″ IE6/IE7/IE8/IE9/IE10都生效
+	
 	“\0″ IE8/IE9/IE10都生效，是IE8/9/10的hack
+	
 	“\9\0″ 只对IE9/IE10生效，是IE9/10的hack
 	
 	3)选择器前缀法;
 	
 	*html *前缀只对IE6生效
+	
 	*+html *+前缀只对IE7生效
+	
 	@media screen\9{...}只对IE6/7生效
+	
 	@media \0screen {body { background: red; }}只对IE8有效
+	
 	@media \0screen\,screen\9{body { background: blue; }}只对IE6/7/8有效
+	
 	@media screen\0 {body { background: green; }} 只对IE8/9/10有效
+	
 	@media screen and (min-width:0\0) {body { background: gray; }} 只对IE9/10有效
+	
 	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {body { background: orange; }} 只对IE10有效
+	
 	等等
 
 ***
