@@ -1,4 +1,4 @@
-#日期
+####日期
 
 **日期常规操作**
 
@@ -105,7 +105,7 @@ console.log(eval(s2.valueOf())); // logs the number 4
 
 **模板字面量**
 
-**ES6标准新增的一种多行字符串表示法，用反引号 \` ... \` 表示，内部引用变量用 **${** xxx **}***
+**ES6标准新增的一种多行字符串表示法，用反引号 \` ... \` 表示，内部引用变量用 **${** xxx **}****
 
 ```python
 `hello world` `hello! world!` `hello ${who}` escape `<a>${who}</a>`
